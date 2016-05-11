@@ -14,7 +14,9 @@ angular
     'ui.bootstrap',
     'ngMessages',
     'ui.validate',
-    'ngStorage'
+    'ngStorage',
+    'ui.grid',
+    'ui.grid.expandable'
   ]).config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('login', {
@@ -27,10 +29,10 @@ angular
         templateUrl: 'views/dashboard.html',
         //controller: 'dashboardCtrl'
       })
-      .state('claims',{
+      .state('claims', {
         url: '/claims',
-        templateUrl: 'views/claims.html',
-        //controller: 'claimsCtrl'
+        templateUrl: 'views/claims.html'/*,
+        controller: 'claimsCtrl'*/
       })
       .state('register',{
         url: '/register',
