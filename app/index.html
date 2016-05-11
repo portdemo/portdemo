@@ -12,33 +12,26 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
+    <!-- Custom CSS -->
+    <link href="styles/styles.css" rel="stylesheet">
     <link rel="stylesheet" href="styles/registration.css">
-    <!--<link rel="stylesheet" href="styles/main.css">-->
     <!-- endbuild -->
+    <style type="text/css">
+        .modal-footer {   border-top: 0px; }
+        img.img-responsive {position: relative;left: 0;right: 0;margin: auto;}
+    </style>
   </head>
   <body ng-app="portalApp">
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <div class="container">
-        <!--<div ng-include="'views/dashboard.html'"></div>-->
-        <div ui-view></div>
+        <div ui-view></div>        
     </div>
-
-  <!--  <div class="footer">
-      <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-      </div>
-    </div>
--->
-
   
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js-->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/angular-messages/angular-messages.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
