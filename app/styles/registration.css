@@ -17,3 +17,11 @@
 .marginSubmitBtn{
 	margin-bottom: 6px !important;
 }
+.tooltip.formTooltip .tooltip-inner{
+	color: black;
+	background-color: #b3e6ff;
+}
+.tooltip.formTooltip .tooltip-arrow{
+ 	/*  display:none;  */
+
+}
