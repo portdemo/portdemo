@@ -3,11 +3,12 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
-
+/*
 body {
-    padding-top: 70px; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
+    padding-top: 70px; 
 }
-
+*/
+/*
 .navbar-fixed-top .nav {
     padding: 15px 0;
 }
@@ -15,17 +16,29 @@ body {
 .navbar-fixed-top .navbar-brand {
     padding: 0 15px;
 }
-
+*/
 footer {
     padding: 30px 0;
 }
 
 @media(min-width:768px) {
+    /*
     body {
-        padding-top: 100px; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
+        padding-top: 100px; 
     }
-
+    */
+/*
     .navbar-fixed-top .navbar-brand {
         padding: 15px 0;
-    }
+    }*/
 }
+/* For header changes */
+.navbar-header { color:#00609A; }
+.navbar-nav > li > a{ color:white !important; }
+.nav > li > a:hover, .nav > li > a:focus { background: none !important; }
+.navbar-collapse ul.navlinks-right li { background: #00609A; margin: 5px; border-radius: 50%; }
+.flex{display:flex;}
+.vertical-center{align-self: center;}
+.navbar-collapse > ul{font-size: 20px;}
+.nopadding{padding:0px;}
+.nomargin{margin:0px;}
