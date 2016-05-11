@@ -11,7 +11,9 @@
 angular
   .module('portalApp', [
     'ui.router',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'ngMessages',
+    'ui.validate'
   ]).config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('login', {
@@ -32,7 +34,7 @@ angular
       .state('register',{
         url: '/register',
         templateUrl: 'views/register.html',
-        //controller: 'registerCtrl'
+        controller: 'registerCtrl'
       });   
 
     $urlRouterProvider.otherwise('/login');
