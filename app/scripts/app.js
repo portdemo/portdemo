@@ -13,13 +13,14 @@ angular
     'ui.router',
     'ui.bootstrap',
     'ngMessages',
-    'ui.validate'
+    'ui.validate',
+    'ngStorage'
   ]).config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('login', {
         url: '/login',
         templateUrl: 'views/login.html',
-        //controller: 'MainCtrl'
+        controller: 'loginCtrl'
       })
       .state('home', {
         url: '/home',

@@ -29,16 +29,16 @@
           
          
       </div>
-      <div class="modal-body">
-          <form class="form col-md-12 center-block">
+      <div class="modal-body" ng-controller="loginCtrl">
+          <form class="form col-md-12 center-block" ng-submit="onLogin(username, password)">
             <div class="form-group">
-              <input type="text" class="form-control input-lg" placeholder="Email">
+              <input type="text" class="form-control input-lg" ng-model="username" placeholder="Username" required>
             </div>
             <div class="form-group">
-              <input type="password" class="form-control input-lg" placeholder="Password">
+              <input type="password" class="form-control input-lg" ng-model="password" placeholder="Password" required>
             </div>
             <div class="form-group">
-              <button class="btn btn-primary btn-lg btn-block">Sign In</button>
+              <button type="submit" class="btn btn-primary btn-lg btn-block">Sign In</button>
               <button class="btn btn-primary btn-lg btn-block" ui-sref="register">Register</button>
             </div>
           </form>
