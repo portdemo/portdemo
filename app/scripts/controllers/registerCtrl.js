@@ -15,5 +15,6 @@ $scope.formReset=function(){
 }
 $scope.registerUser=function(){
 	console.log($scope.newUser);
+	
 }
 }])

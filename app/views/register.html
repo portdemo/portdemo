@@ -12,7 +12,7 @@
             <fieldset class="form-group">
             <input tooltip-class="formTooltip" tooltip-placement="bottom" uib-tooltip="Provide your first name. Special characters and numbers are not allowed"  tooltip-trigger="mouseenter" tooltip-enable="!newUser.firstName" required type="text" class="form-control input-lg" placeholder="First Name" name="firstName"  ng-maxlength="25" ng-pattern="/^[a-zA-Z ]*$/" ng-model="newUser.firstName" />
  <div class="help-block" ng-messages="signupForm.firstName.$error" ng-if="signupForm.firstName.$dirty">
-      <p ng-message="maxlength">Your first name is too long. Max length is 25 characters.</p>
+      <p ng-message="maxlength">Your first name is too long. Maximum length is 25 characters.</p>
       <p ng-message="required">Your first name is required.</p>
       <p ng-message="pattern"> You cannot use any symbols or numbers! </p>
       </div>
@@ -23,7 +23,7 @@
              <input tooltip-class="formTooltip"  tooltip-placement="bottom" uib-tooltip="Provide your last name. Special characters and numbers are not allowed"  tooltip-trigger="mouseenter" tooltip-enable="!newUser.lastName"  required type="text" ng-model="newUser.lastName" class="form-control input-lg" placeholder="Last name" name="lastName"  ng-maxlength="25" ng-pattern="/^[a-zA-Z ]*$/"/>
 
                <div class="help-block" ng-messages="signupForm.lastName.$error" ng-if="signupForm.lastName.$dirty">
-      <p ng-message="maxlength">Your last name is too long. Max length is 25 characters.</p>
+      <p ng-message="maxlength">Your last name is too long. Maximum length is 25 characters.</p>
       <p ng-message="required">Your last name is required.</p>
       <p ng-message="pattern"> You cannot use any symbols or numbers! </p>
       </div>
@@ -34,8 +34,8 @@
               ng-minlength="3" ng-maxlength="20" ng-pattern="/^[a-zA-Z0-9_]*$/"/>
 
       <div class="help-block" ng-messages="signupForm.userName.$error" ng-if="signupForm.userName.$dirty">
-      <p ng-message="minlength">Your username is too short. Min length is 3.</p>
-      <p ng-message="maxlength">Your username is too long. Max length is 15. </p>
+      <p ng-message="minlength">Your username is too short. Minimum length is 3.</p>
+      <p ng-message="maxlength">Your username is too long. Maximum length is 15. </p>
       <p ng-message="required">Your username is required.</p>
       <p ng-message="pattern"> You cannot use any symbols! Underscore is allowed. </p>
       </div>
