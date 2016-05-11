@@ -13,7 +13,7 @@ $scope.formReset=function(){
 	  $scope.signupForm.$setPristine();
               $scope.signupForm.$setUntouched();
 }
-$scope.submit=function(){
+$scope.registerUser=function(){
 	console.log($scope.newUser);
 }
 }])
