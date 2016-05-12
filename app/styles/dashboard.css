@@ -1,0 +1,19 @@
+.m-t-15 {
+	margin-top: 15px;
+}
+
+.m-t-45 {
+	margin-top: 45px;
+}
+
+.anthemAlert {
+	background-color: #CCF0FF;
+	width:600px;
+	padding:18px;
+	border: 1px solid navy;
+	margin: auto;
+}
+
+.anthemAlert i {
+	color: #337ab7;
+}
