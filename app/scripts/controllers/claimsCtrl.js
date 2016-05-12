@@ -5,7 +5,7 @@ var app = angular.module('portalApp');
 app.controller('claimsCtrl', ['$scope', '$http', function($scope, $http){
 	$scope.gridOptions = {
 	    expandableRowTemplate: '<div style="height:150px;">Sundar</div>',
-	    expandableRowHeight: 150
+	    expandableRowHeight: 100
 	};
 
 	$scope.gridOptions.columnDefs = [
