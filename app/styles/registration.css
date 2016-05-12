@@ -25,3 +25,9 @@
  	/*  display:none;  */
 
 }
+#registerForm{
+	border-style:solid;
+border-color:grey;
+border-width: 2px; 
+width: relative; 
+}
