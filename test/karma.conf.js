@@ -33,12 +33,20 @@ module.exports = function(config) {
       // endbower
       'app/scripts/**/*.js',
       'test/mock/**/*.js',
-      'test/spec/**/*.js'
+      'test/spec/**/*.js',
+        'app/**/*.html'
     ],
 
     // list of files / patterns to exclude
     exclude: [
     ],
+    ngHtml2JsPreprocessor: { 
+    moduleName: 'templates'
+},
+
+preprocessors: {
+    'app/**/*.html': ['ng-html2js']
+}, 
 
     // web server port
     port: 8080,
@@ -52,13 +60,13 @@ module.exports = function(config) {
     // - PhantomJS
     // - IE (only Windows)
     browsers: [
-      'PhantomJS'
+     'Chrome'
     ],
 
     // Which plugins to enable
     plugins: [
-      'karma-phantomjs-launcher',
-      'karma-jasmine'
+      'karma-chrome-launcher',
+      'karma-jasmine', 'karma-ng-html2js-preprocessor'
     ],
 
     // Continuous Integration mode
