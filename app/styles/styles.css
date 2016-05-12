@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
 /*!
  * Start Bootstrap - Small Business HTML Template (http://startbootstrap.com)
  * Code licensed under the Apache License v2.0.
@@ -42,3 +43,7 @@ footer {
 .navbar-collapse > ul{font-size: 20px;}
 .nopadding{padding:0px;}
 .nomargin{margin:0px;}
+.banner .overlay{position: absolute;top: 100px;left: 0;width: 100%;height: 100%;color: white;}
+.banner .overlay h2{font-family: 'Open Sans', sans-serif;}
+.overlay .dropdown{margin:auto;width:220px;}
+.overlay .dropdown-menu {text-align: center;margin-top: 0px;}
