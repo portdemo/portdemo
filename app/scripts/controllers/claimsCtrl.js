@@ -9,20 +9,22 @@ app.controller('claimsCtrl', ['$scope', '$http', function($scope, $http){
 	};
 
 	$scope.gridOptions.columnDefs = [
-		{ name: 'ServiceDate'},
-		{ name: 'Patient'},
-		{ name: 'Provider'},
-		{ name: 'TotalBilled'},
-		{ name: 'Status'}
+		{ name: 'serviceDate'},
+		{ name: 'patient'},
+		{ name: 'provider'},
+		{ name: 'totalBilled'},
+		{ name: 'status'}
 	];
 
 	$scope.gridOptions.onRegisterApi = function(gridApi){
 		$scope.gridApi = gridApi;
 	};
 
-	$http.get('/data/claimsData.json')
+	$http.get('http://10.236.91.188:8080/SpringRestfulWebServicesWithJSONExample/claims.json')
+    
     .success(function(data) {
-      $scope.gridOptions.data = data;
+  
+        $scope.gridOptions.data = data;
     });
 
 	/*$scope.expandAllRows = function() {

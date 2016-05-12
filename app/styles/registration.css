@@ -31,3 +31,6 @@ border-color:grey;
 border-width: 2px; 
 width: relative; 
 }
+.resetBtn{
+	margin-right: 10px;
+}
