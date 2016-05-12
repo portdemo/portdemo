@@ -2,10 +2,10 @@
     <div class="text-center banner">
        <img class="img-responsive " src="images/banner.png" alt="slider_image"  width="100%">
        <div class="overlay">
-           <div class="banner_content">
-                <h2>Welcome, YOURNAME</h2>
-               <strong>Member ID | Plan Name Anthem Inc</strong>
-               <p>Last Login on 5/12/2016 at 11.00am</p>
+           <div class="banner_content" ng-controller="bannerCtrl">
+                <h2>Welcome, {{first_name}}</h2>
+               <strong>Member ID : {{member_id}} | Plan Name : {{plan_name}}</strong>
+               <p>Last Login on {{last_login | date:'MM/dd/yyyy'}} at {{last_login | date:'h:mma'}}</p>
                <div class="dropdown">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">How can we help you today?
                 <span class="caret"></span></button>
