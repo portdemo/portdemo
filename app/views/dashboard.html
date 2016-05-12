@@ -1,33 +1,35 @@
 <!-- Page Content -->
-    <div class="container">
+<div class="container">
 <!-- Call to Action Well -->
-        <div class="row">
-            <div ng-include="'views/banner.html'"></div>            
-        </div>
-        <!-- /.row -->
- <!-- new Content Row 1-->
-        <div class="row">
-        <div class="col-md-12" >
-            <br>
-            <h2 align="center">We're glad you're here</h2>
-            <p align="center">Welcome to our new Reimagined Member Site</p>
-            <br>
-            <div style="background-color: #CCF0FF; width:600px; padding:18px; border: 1px solid navy;" align="center">Read <a>here</a> for more information about Anthem's recent cyber attack.</div>
-           
-            </div>
-        </div>
-        <div class="row">
-        <div class="col-md-12">
-            <hr>
-            <h2 class="text-center">Your Recent Claims</h2>
-            <hr>
-            <div ng-include="'views/claims.html'"></div>
-        </div>
-            <a ui-sref='claims'>View All Claims</a>
-      </div>
-         <!-- end Content Row 1-->
-        
+    <div class="row">
+        <div ng-include="'views/banner.html'"></div>            
     </div>
-    
-   
-    <!-- /.container -->
+    <!-- /.row -->
+<!-- new Content Row 1-->
+    <div class="row">
+    <div class="col-md-12" >
+        <br>
+        <h2 align="center">We're glad you're here</h2>
+        <p align="center">Welcome to our new Reimagined Member Site</p>
+        <br>
+        <div class="anthemAlert"><i class="glyphicon glyphicon-info-sign"></i>&nbsp;Read <a>here</a> for more information about Anthem's recent cyber attack.</div>
+       
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-center m-t-45">Your Recent Claims</h2>
+           <div ng-controller="claimsCtrl">
+		<div ui-grid="gridOptions" class="grid"></div>
+    </div>
+        </div>
+    </div>
+
+    <div class="m-t-15">
+        <button ui-sref='claims' class="btn btn-warning center-block ">View All Claims</button>
+    </div>
+     <!-- end Content Row 1-->
+</div>
+
+
+<!-- /.container -->
