@@ -42,30 +42,35 @@ app.controller('claimsDashboardCtrl', ['$scope', '$http', function($scope, $http
 	};
     
 	$scope.gridOptions.columnDefs = [
-		{ name: 'ServiceDate'},
-		{ name: 'Patient'},
-		{ name: 'Provider'},
-		{ name: 'TotalBilled'},
-		{ name: 'Status'}
+		{ name: 'serviceDate'},
+		{ name: 'patient'},
+		{ name: 'provider'},
+		{ name: 'totalBilled'},
+		{ name: 'status'}
 	];
 
 	$scope.gridOptions.onRegisterApi = function(gridApi){
 		$scope.gridApi = gridApi;
 	};
 
-	$http.get('/data/claimsData.json')
+	$http.get('http://10.236.91.188:8080A/SpringRestfulWebServicesWithJSONExample/claims.json')
     .success(function(data) {
         $scope.data = [];
-      //$scope.gridOptions.data =;
-       for(var i=0; i<=2; i++)
+
+       for(var i=0; i<3; i++)
            {
+             if(data[i]===undefined){break;}                 
              $scope.data[i]=data[i];
            }
-        console.log($scope.data);
-   // alert(JSON.stringify($scope.data));
-       
+   
        $scope.gridOptions.data =  $scope.data;
-    });
+    })
+    .error(function(data){
+          
+        $scope.gridOptions.data = [{"serviceDate":"Claims data was not found. Please contact customer support if you need further assistance",}];
+        $scope.gridOptions.RowHeight=10;
+           });
+    
 
 	/*$scope.expandAllRows = function() {
 		$scope.gridApi.expandable.expandAllRows();
