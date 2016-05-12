@@ -18,9 +18,9 @@ angular.module('portalApp')
         loginService.getUser().then(function(data) {
             $scope.users = data;
             var login = false;
-            var len = $scope.users.length
+            var len = $scope.users.length;
             for(var i=0;i<len;i++){
-                if(username == $scope.users[i].username && password == $scope.users[i].password){
+                if(username == $scope.users[i].userName && password == $scope.users[i].password){
                     login = true;
                     $localStorage.username = username;
                     //console.log($localStorage.useremail);
@@ -49,7 +49,7 @@ function loginFactory($http) {
 
   function getUser () {
     return $http
-      .get('../data/login.json')
+      .get('http://10.236.91.188:8080/SpringRestfulWebServicesWithJSONExample/member')
       .then(complete)
       .catch(failed);
   }
