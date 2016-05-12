@@ -11,7 +11,7 @@
       <div class="modal-body">
           <form class="form col-md-12 center-block" name="signupForm" ng-submit="signupForm.$valid && registerUser()" novalidate>
             <fieldset class="form-group">
-            <input tooltip-class="formTooltip" tooltip-placement="bottom" uib-tooltip="Provide your first name. Special characters and numbers are not allowed"  tooltip-trigger="mouseenter" tooltip-enable="!newUser.firstName" required type="text" class="form-control input-lg" placeholder="First Name" name="firstName"  ng-maxlength="25" ng-pattern="/^[a-zA-Z ]*$/" ng-model="newUser.firstName" />
+            <input tooltip-class="formTooltip" tooltip-placement="bottom" uib-tooltip="Provide your first name. Special characters and numbers are not allowed"  tooltip-trigger="mouseenter" tooltip-enable="!newUser.firstName" required type="text" class="form-control input-lg" id="register" placeholder="First Name" name="firstName"  ng-maxlength="25" ng-pattern="/^[a-zA-Z ]*$/" ng-model="newUser.firstName" />
  <div class="help-block" ng-messages="signupForm.firstName.$error" ng-if="signupForm.firstName.$dirty">
       <p ng-message="maxlength">Your first name is too long. Maximum length is 25 characters.</p>
       <p ng-message="required">Your first name is required.</p>
@@ -21,7 +21,7 @@
 
             </fieldset>
             <fieldset class="form-group">
-             <input tooltip-class="formTooltip"  tooltip-placement="bottom" uib-tooltip="Provide your last name. Special characters and numbers are not allowed"  tooltip-trigger="mouseenter" tooltip-enable="!newUser.lastName"  required type="text" ng-model="newUser.lastName" class="form-control input-lg" placeholder="Last name" name="lastName"  ng-maxlength="25" ng-pattern="/^[a-zA-Z ]*$/"/>
+             <input tooltip-class="formTooltip"  tooltip-placement="bottom" uib-tooltip="Provide your last name. Special characters and numbers are not allowed"  id="register"  tooltip-trigger="mouseenter" tooltip-enable="!newUser.lastName"  required type="text" ng-model="newUser.lastName" class="form-control input-lg" placeholder="Last name" name="lastName"  ng-maxlength="25" ng-pattern="/^[a-zA-Z ]*$/"/>
 
                <div class="help-block" ng-messages="signupForm.lastName.$error" ng-if="signupForm.lastName.$dirty">
       <p ng-message="maxlength">Your last name is too long. Maximum length is 25 characters.</p>
@@ -31,7 +31,7 @@
             </fieldset>
               
                <fieldset class="form-group">
-             <input tooltip-class="formTooltip" tooltip-placement="bottom" uib-tooltip="Select a unique username. Numbers and underscore is allowed, other symbols are not"  tooltip-trigger="mouseenter" tooltip-enable="!newUser.userName" required type="text" ng-model="newUser.userName" class="form-control input-lg" placeholder="Enter a username" name="userName"  
+             <input tooltip-class="formTooltip"  id="register"  tooltip-placement="bottom" uib-tooltip="Select a unique username. Numbers and underscore is allowed, other symbols are not"  tooltip-trigger="mouseenter" tooltip-enable="!newUser.userName" required type="text" ng-model="newUser.userName" class="form-control input-lg" placeholder="Enter a username" name="userName"  
               ng-minlength="3" ng-maxlength="20" ng-pattern="/^[a-zA-Z0-9_]*$/"/>
 
       <div class="help-block" ng-messages="signupForm.userName.$error" ng-if="signupForm.userName.$dirty">
@@ -45,7 +45,7 @@
             </fieldset>
               
                <fieldset class="form-group">
-              <input  tooltip-class="formTooltip" tooltip-placement="bottom" uib-tooltip="Provide your email address here"  tooltip-trigger="mouseenter" tooltip-enable="!newUser.email"  required type="email" ng-model="newUser.email" class="form-control input-lg" placeholder="name@example.com" name="email"/>
+              <input  tooltip-class="formTooltip" id="register" tooltip-placement="bottom" uib-tooltip="Provide your email address here"  tooltip-trigger="mouseenter" tooltip-enable="!newUser.email"  required type="email" ng-model="newUser.email" class="form-control input-lg" placeholder="name@example.com" name="email"/>
                 <div class="help-block" ng-messages="signupForm.email.$error" ng-if="signupForm.email.$dirty">
       <p ng-message="required">Your email address is required!</p>
       <p ng-message="email"> Your email address is not valid! </p>
@@ -54,7 +54,7 @@
             </fieldset>
               
                <fieldset class="form-group">
-              <input  tooltip-class="formTooltip" tooltip-placement="bottom" uib-tooltip="Select a strong 8 character password"  tooltip-trigger="mouseenter" tooltip-enable="!newUser.password" required type="password" ng-model="newUser.password" class="form-control input-lg" placeholder="Enter a 8 letter password" name="password"  ng-minlength="8"/>
+              <input  tooltip-class="formTooltip"  id="register" tooltip-placement="bottom" uib-tooltip="Select a strong 8 character password"  tooltip-trigger="mouseenter" tooltip-enable="!newUser.password" required type="password" ng-model="newUser.password" class="form-control input-lg" placeholder="Enter a 8 letter password" name="password"  ng-minlength="8"/>
                 <div class="help-block" ng-messages="signupForm.password.$error" ng-if="signupForm.password.$dirty">
       <p ng-message="minlength">Your Password is too short. Minimum length is 8.</p>
       <p ng-message="required">Your password is required </p>
@@ -63,7 +63,7 @@
             </fieldset>
               
                <fieldset class="form-group">
-              <input tooltip-class="formTooltip" tooltip-placement="bottom" uib-tooltip="Repeat the same password"  tooltip-trigger="mouseenter" tooltip-enable="!comparePassword" required type="password" ng-model="comparePassword" class="form-control input-lg" placeholder="Repeat the password" name="passwordRepeat" ng-minlength="8" ui-validate=" '$value==newUser.password'"/>
+              <input tooltip-class="formTooltip"  id="register" tooltip-placement="bottom" uib-tooltip="Repeat the same password"  tooltip-trigger="mouseenter" tooltip-enable="!comparePassword" required type="password" ng-model="comparePassword" class="form-control input-lg" placeholder="Repeat the password" name="passwordRepeat" ng-minlength="8" ui-validate=" '$value==newUser.password'"/>
               <div class="help-block" ng-messages="signupForm.passwordRepeat.$error" ng-if="signupForm.passwordRepeat.$dirty">
       <p ng-message="minlength">Your Password is too short. Minimum length is 8.</p>
       <p ng-message="required">Enter the same password again!</p>
