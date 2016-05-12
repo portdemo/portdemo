@@ -53,16 +53,16 @@ app.controller('claimsDashboardCtrl', ['$scope', '$http', function($scope, $http
 
 	$http.get('/data/claimsData.json')
     .success(function(data) {
-        //$scope.data = data;
+        $scope.data = [];
       //$scope.gridOptions.data =;
-        
-       for(var i=1; i<=3; i++)
+       for(var i=0; i<=2; i++)
            {
-               $scope.data[i]=data[i];
-               
+             $scope.data[i]=data[i];
            }
+        console.log($scope.data);
    // alert(JSON.stringify($scope.data));
-       $scope.gridOptions.data =  $scope.data[i];
+       
+       $scope.gridOptions.data =  $scope.data;
     });
 
 	/*$scope.expandAllRows = function() {
