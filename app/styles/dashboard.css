@@ -8,12 +8,17 @@
 
 .anthemAlert {
 	background-color: #CCF0FF;
+	border-radius: 3px;
 	width:600px;
 	padding:18px;
-	border: 1px solid navy;
+	border: 1.5px solid #05AAFC;
 	margin: auto;
 }
 
 .anthemAlert i {
 	color: #337ab7;
+}
+
+.font-glad{
+font-family: "Calibri", sans-serif;
 }

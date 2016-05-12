@@ -48,3 +48,8 @@ footer {
 .banner .overlay h2{font-family: 'Open Sans', sans-serif;}
 .overlay .dropdown{margin:auto;width:220px;}
 .overlay .dropdown-menu {text-align: center;margin-top: 0px;}
+
+
+.footerParts a {
+    color: white;
+}
