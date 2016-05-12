@@ -53,7 +53,7 @@ app.controller('claimsDashboardCtrl', ['$scope', '$http', function($scope, $http
 		$scope.gridApi = gridApi;
 	};
 
-	$http.get('http://10.236.91.188:8080A/SpringRestfulWebServicesWithJSONExample/claims.json')
+	$http.get('http://10.236.91.188:8080/SpringRestfulWebServicesWithJSONExample/claims.json')
     .success(function(data) {
         $scope.data = [];
 
