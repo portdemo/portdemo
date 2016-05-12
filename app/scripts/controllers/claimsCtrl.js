@@ -38,7 +38,7 @@ app.controller('claimsDashboardCtrl', ['$scope', '$http', function($scope, $http
 	    expandableRowTemplate: '<div style="height:150px;">Sundar</div>',
 	    expandableRowHeight: 100
 	};
-//$scope.data={};
+    
 	$scope.gridOptions.columnDefs = [
 		{ name: 'ServiceDate'},
 		{ name: 'Patient'},
