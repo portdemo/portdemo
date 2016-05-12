@@ -4,8 +4,8 @@ var app = angular.module('portalApp');
 
 app.controller('claimsCtrl', ['$scope', '$http', function($scope, $http){
 	$scope.gridOptions = {
-	    expandableRowTemplate: '<div style="height:150px;">Sundar</div>',
-	    expandableRowHeight: 100
+	    expandableRowTemplate: '../views/claimsdetails.html',
+	    expandableRowHeight: 250
 	};
 
 	$scope.gridOptions.columnDefs = [
@@ -26,15 +26,8 @@ app.controller('claimsCtrl', ['$scope', '$http', function($scope, $http){
   
         $scope.gridOptions.data = data;
     });
-
-	/*$scope.expandAllRows = function() {
-		$scope.gridApi.expandable.expandAllRows();
-	}
-
-	$scope.collapseAllRows = function() {
-		$scope.gridApi.expandable.collapseAllRows();
-	}*/
 }]);
+
 app.controller('claimsDashboardCtrl', ['$scope', '$http', function($scope, $http){
 	$scope.gridOptions = {
 	    expandableRowTemplate: '<div style="height:150px;">Sundar</div>',
