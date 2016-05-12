@@ -30,5 +30,29 @@
         "Provider": "Wellpoint",
         "TotalBilled": "$1,784.00",
         "Status": "Denied"
+    },
+    {
+        "id": 4,
+        "ServiceDate": "12/10/2012",
+        "Patient": "willsmith",
+        "Provider": "Wellpoint",
+        "TotalBilled": "$1,784.00",
+        "Status": "Processed"
+    },
+    {
+        "id": 5,
+        "ServiceDate": "23/02/2013",
+        "Patient": "kigston Romez",
+        "Provider": "Wellpoint",
+        "TotalBilled": "$1,784.00",
+        "Status": "Processed"
+    },
+    {
+        "id": 6,
+        "ServiceDate": "18/08/2013",
+        "Patient": "Dr.Borwney junior",
+        "Provider": "Wellpoint",
+        "TotalBilled": "$1,784.00",
+        "Status": "Processed"
     }
 ]

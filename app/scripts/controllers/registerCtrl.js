@@ -17,4 +17,4 @@ $scope.registerUser=function(){
 	console.log($scope.newUser);
 	
 }
-}])
+}]);

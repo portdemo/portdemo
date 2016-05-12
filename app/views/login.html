@@ -1,35 +1,25 @@
 
 <!--login modal-->
-<div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog">
-  <div class="modal-content">
-      <span class="col-xs-offset-3">
-      <img src="images/accentureLogo.png" class="img-responsive">
-      </span>
-          <div class="modal-header">
-        
-          
-         
-      </div>
-      <div class="modal-body" ng-controller="loginCtrl">
-          <form class="form col-md-12 center-block" ng-submit="onLogin(username, password)">
-            <div class="form-group">
-              <input type="text" class="form-control input-lg" ng-model="username" placeholder="Username" required>
+<div class="row  col-md-12" style="padding:50px;">
+    <div class="container">
+        <div class="col-md-6 col-md-offset-2">
+            <h2 class="text-center">LOGIN</h2>
+            <div id="loginModal" class=" " role="dialog" aria-hidden="true">
+                <div class="" ng-controller="loginCtrl">
+                  <form class="form col-md-12 center-block" ng-submit="onLogin(username, password)">
+                    <div class="form-group">
+                      <input type="text" class="form-control input-lg" ng-model="username" placeholder="Username" required>
+                    </div>
+                    <div class="form-group">
+                      <input type="password" class="form-control input-lg" ng-model="password" placeholder="Password" required>
+                    </div>
+                    <div class="form-group">
+                      <button type="submit" class="btn btn-primary btn-lg btn-block">Sign In</button>
+                      <button class="btn btn-primary btn-lg btn-block" ui-sref="register">Register</button>
+                    </div>
+                  </form>
+              </div>
             </div>
-            <div class="form-group">
-              <input type="password" class="form-control input-lg" ng-model="password" placeholder="Password" required>
-            </div>
-            <div class="form-group">
-              <button type="submit" class="btn btn-primary btn-lg btn-block">Sign In</button>
-              <button class="btn btn-primary btn-lg btn-block" ui-sref="register">Register</button>
-            </div>
-          </form>
-      </div>
-      <div class="modal-footer">
-          <div class="col-md-12">
-          <!--<button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>-->
-		  </div>	
-      </div>
-  </div>
-  </div>
+        </div>
+    </div>
 </div>
