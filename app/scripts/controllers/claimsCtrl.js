@@ -46,7 +46,7 @@ app.controller('claimsDashboardCtrl', ['$scope', '$http', function($scope, $http
 		$scope.gridApi = gridApi;
 	};*/
 
-	$http.get('data/claimsData.json')
+	$http.get('http://10.236.91.188:8080/SpringRestfulWebServicesWithJSONExample/claims.json')
         .success(function(data) {
            /*$scope.gridOptions.data =  $scope.data;*/
            if(data!=''){
