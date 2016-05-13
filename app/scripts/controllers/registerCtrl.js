@@ -16,7 +16,7 @@ $scope.showStatus=false;
 $scope.formReset=function(){
 	  $scope.signupForm.$setPristine();
               $scope.signupForm.$setUntouched();
-}
+};
 
 
 
@@ -44,10 +44,10 @@ $http.post('http://10.236.91.188:8080/ClaimsPortal/requestbody',angular.toJson($
     $scope.showSuccess=false;
     $scope.showFailure=true;
    $scope.statusMsg="Account registration has failed. Please try again!"; */
-}
+};
 
 $scope.closeAlert=function(){
 	$scope.showFailure=false;
-}
-
+};
+ 
 }]);
