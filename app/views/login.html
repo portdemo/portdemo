@@ -16,12 +16,13 @@
                       <input type="password"  tooltip-class="formTooltip" tooltip-placement="bottom" uib-tooltip="Provide your password" tooltip-trigger="mouseenter" type="text" class="form-control input-lg" ng-model="password" name="password" placeholder="Password" required>
                       <div class="help-block" ng-messages="signinForm.password.$error" ng-if="signinForm.password.$dirty">
                         <p ng-message="required">Your password is required.</p>
-                    </div>
-                        <div class="alert alert-danger default" ng-hide="hidden" role="alert">
-                              <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-                              <span class="sr-only" ng-class="{fade: startFade}">Error:</span>
+                      </div>
+                      <div class="alert alert-danger default" ng-hide="hidden" role="alert">
+                          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                          <span class="sr-only" ng-class="{fade: startFade}">Error:</span>
                               {{error}}
-                        </div>
+                      </div>
+                    </div>
                     <div class="form-group">
                       <button type="submit" class="btn btn-primary btn-lg btn-block">Sign In</button>
                       <a ui-sref="register" class="pull-right"><strong>Not a member? Register Now!</strong></a>
