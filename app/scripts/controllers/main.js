@@ -16,7 +16,7 @@ angular.module('portalApp')
         alert('yes stored');
     }*/
     $scope.hidden = true;
-    if(($localStorage.username) && ($localStorage.username.length) > 0){
+    if($localStorage.username || $localStorage.username !=""){
       $rootScope.login = $localStorage.username;
     }
 
@@ -32,7 +32,7 @@ angular.module('portalApp')
                     //login = true;
                     $localStorage.username = username;
                     $rootScope.login = $localStorage.username;
-                    $state.go('home',{reload:true});
+                    //$state.go('home',{reload:true});
                     //console.log($localStorage.useremail);
                 }
             }
@@ -77,7 +77,7 @@ angular.module('portalApp')
                 $scope.member_id =$scope.banners[i].memberId;
                 $scope.plan_name =$scope.banners[i].planName;
                 $scope.last_login =$scope.banners[i].lastLogin;
-                $scope.newDate =new Date($scope.last_login);
+                $scope.newDate = new Date($scope.last_login);
             }
         }
     })
