@@ -1,0 +1,18 @@
+.dt-pick-link {
+	padding: 20px 0 25px;
+}
+
+.dt-pick-link span {
+	color: black;
+	color: #0079C2;
+	cursor: pointer;
+}
+
+.dt-pick-link i {
+	color: black;
+}
+
+.dt-pick-comp {
+    margin: 0 0 40px;
+    height: 20px;
+}
