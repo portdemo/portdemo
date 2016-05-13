@@ -32,8 +32,6 @@ angular.module('portalApp')
                     //login = true;
                     $localStorage.username = username;
                     $rootScope.login = $localStorage.username;
-                    //$state.go('home',{reload:true});
-                    //console.log($localStorage.useremail);
                 }
             }
             if($rootScope.login){
@@ -76,7 +74,7 @@ angular.module('portalApp')
                 $scope.first_name =$scope.banners[i].firstName;
                 $scope.member_id =$scope.banners[i].memberId;
                 $scope.plan_name =$scope.banners[i].planName;
-                $scope.last_login =$scope.banners[i].lastLogin;
+                $scope.last_login =$scope.banners[i].lastLogin.replace(/ /g,'T');
                 $scope.newDate = new Date($scope.last_login);
             }
         }
