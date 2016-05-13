@@ -45,7 +45,7 @@
             </fieldset>
               
                <fieldset class="form-group">
-              <input  tooltip-class="formTooltip" id="register" tooltip-placement="bottom" uib-tooltip="Provide your email address here"  tooltip-trigger="mouseenter" tooltip-enable="!newUser.email"  required type="email" ng-model="newUser.email" class="form-control input-lg" placeholder="name@example.com" name="email"/>
+              <input  tooltip-class="formTooltip" id="register" tooltip-placement="bottom" uib-tooltip="Provide your email address here"  tooltip-trigger="mouseenter" tooltip-enable="!newUser.email"  required type="email" ng-model="newUser.emailAddress" class="form-control input-lg" placeholder="name@example.com" name="email"/>
                 <div class="help-block" ng-messages="signupForm.email.$error" ng-if="signupForm.email.$dirty">
       <p ng-message="required">Your email address is required!</p>
       <p ng-message="email"> Your email address is not valid! </p>
