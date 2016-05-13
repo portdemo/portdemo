@@ -1,0 +1,37 @@
+<div class="row expandedRow">
+	<div class="col-md-6">
+		<div>
+			<label>PHARMACY CLAIM NUMBER:</label>
+			<span>{{row.entity.pharmacyClaimNo}}</span>
+		</div>
+		<div>
+			<label>NETWORK:</label>
+			<span>{{row.entity.network}}</span>
+		</div>
+		<div>
+			<label>MEDICATION NAME:</label>
+			<span>{{row.entity.medication}}</span>
+		</div>
+		<div>
+			<label>QUANTITY (DAYS SUPPLY):</label>
+			<span>{{row.entity.quantity}}</span>
+		</div>
+		<div>
+			<label>TYPE:</label>
+			<span>{{row.entity.type}}</span>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<button class="pull-right btn btn-default">MANAGE YOUR PRESCRIPTIONS</button>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-5 totalBilled">
+		<span>TOTAL BILLED&nbsp;<i class="glyphicon glyphicon-question-sign"></i></span><br/>
+		<span>{{row.entity.totalBilled}}</span>
+	</div>
+	<div class="col-md-7 totalBilled">
+		<span>YOU PAY&nbsp;<i class="glyphicon glyphicon-question-sign"></i></span><br/>
+		<span>{{row.entity.pay}}</span>
+	</div>
+</div>

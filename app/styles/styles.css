@@ -51,3 +51,30 @@ footer {
 .footerParts a {color: white;}
 .default{opacity: 1; color:red;}
 .fade{-webkit-transition: opacity 10s; transition: opacity 10s; opacity: 0;}
+
+.footerParts a {
+    color: white;
+}
+.expandedRow {
+    margin: 15px 0;
+}
+.expandedRow button {
+    margin-right: 20px;
+}
+.totalBilled {
+    border-top: 1px solid grey;
+    padding-top: 15px;
+    padding-left: 200px;
+}
+.scrollFiller, .grid.ui-grid, .ui-grid-header, .ui-grid-header-cell, .ui-grid-row .ui-grid-cell, .ui-grid-pinned-container.ui-grid-pinned-container-left .ui-grid-cell:last-child, .ui-grid-pinned-container.ui-grid-pinned-container-left .ui-grid-header-cell:last-child {
+    border: 0px;
+}
+.ui-grid-expandable-buttons-cell i {
+    color: #ff9900;
+}
+.ui-grid-top-panel, .ui-grid-row .ui-grid-cell.ui-grid-row-header-cell {
+    background: transparent;
+}
+.ui-grid-column-menu-button {
+    display: none;
+}
