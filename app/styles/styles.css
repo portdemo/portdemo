@@ -79,3 +79,6 @@ footer {
 .ui-grid-column-menu-button {
     display: none;
 }
+.ui-grid-cell-contents {
+    outline: none;
+}
