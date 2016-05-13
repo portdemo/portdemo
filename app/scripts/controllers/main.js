@@ -11,10 +11,11 @@ angular.module('portalApp')
  /*
  * Controller for authentication for login
  */
-  .controller('loginCtrl', function ($scope, $state, $localStorage, loginService) {
+  .controller('loginCtrl', function ($scope, $state, $localStorage, loginService, $timeout) {
     /*if($localStorage.useremail){
         alert('yes stored');
     }*/
+    $scope.hidden = true;
     $scope.onLogin = function(username,password){
         //console.log(username +' '+ password);
         //console.log('you clicked');
@@ -33,7 +34,12 @@ angular.module('portalApp')
                 $state.go('home');
             }
             else {
-                alert('Invalid Username or Password');
+                //alert('Invalid Username or Password');
+                 $timeout(function(){
+                    $scope.hidden = false;
+                    $scope.startFade = true;
+                    $scope.error = "Invalid Username or password";
+                }, 5000);
                 return false;
             }
         })
@@ -47,7 +53,7 @@ angular.module('portalApp')
    */
 angular.module('portalApp')
  .controller('bannerCtrl', function($scope, $state, $localStorage, loginService){
-     if(!$localStorage.username){
+     if(!$localStorage.username || $localStorage.username == ""){
          $state.go('login');
      }
     loginService.getUser().then(function(data){
