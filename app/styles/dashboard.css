@@ -22,3 +22,7 @@
 .font-glad{
 font-family: "Calibri", sans-serif;
 }
+
+.claimsDashTable td, .claimsDashTable th {
+	padding: 7px 0;
+}
