@@ -75,12 +75,21 @@
             <fieldset class="marginSubmitBtn">
               <input required type="submit" class="btn btn-success btn-lg"
                ng-disabled="!signupForm.$valid" value="Register" />
-<div class="alert alert-success" ng-hide="hidden" role="alert"><a ui-sref="login" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" ng-if="regStatus"></span>
+              
+<!--Alert messages-->
+<div ng-if="showStatus">
+<div class="alert alert-success" ng-if="showSuccess" role="alert"><a ui-sref="login" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" ></span>
                           <span class="sr-only" ng-class="{fade: startFade}">Success:</span>
                               {{statusMsg}}
                       </div>
 
+<uib-alert type="danger" close="closeAlert()" ng-if="showFailure" role="alert" dismiss-on-timeout="6000" >
+                          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" ></span>
+                          <span class="sr-only" ng-class="{fade: startFade}">Failure:</span>
+                              {{statusMsg}}
+                      </uib-alert>   
+</div>
               <button ui-sref="login" class="btn btn-info btn-lg pull-right">Cancel</button>
          <button type="reset" class="btn btn-info btn-lg pull-right resetBtn" ng-click="formReset()"> Reset </button>
 

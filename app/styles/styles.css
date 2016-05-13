@@ -43,6 +43,7 @@ footer {
 .navbar-collapse > ul{font-size: 20px; padding-top:12px; padding-bottom: 10px;}
 .nopadding{padding:0px;}
 .nomargin{margin:0px;}
+.glyphicon.glyphicon-menu-hamburger.vertical-center{font-size:35px;}
 .banner .overlay{position: absolute;top: 0px;left: 12px;width: 98%;height: 100%;color: white;background: rgba(0, 0, 0, .2);}
 .banner .overlay .banner_content{position:relative; top:130px;display: inline-block; margin:auto !important;}
 .banner .overlay h2{font-family: 'Open Sans', sans-serif;}
