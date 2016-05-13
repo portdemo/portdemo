@@ -82,3 +82,15 @@ footer {
 .ui-grid-cell-contents {
     outline: none;
 }
+.footer{
+    background-color: #336699 ;padding-bottom: 5px; padding-top: 10px;
+}
+.footerbottom{
+    background-color: #1a75ff ;padding-bottom: 40px; padding-top: 20px;
+}
+.fontcolor{ color: #ffffff;  }
+.fontcolor a { color: #ffffff;font-size: 12px;  }
+.fontcolor div { padding: 3px; font-style:normal; }
+.fontspace {color: #ffffff; font-size: 13px;padding-top:15px; }
+.fontcolorsize{ color: #ffffff; font-style: normal;font-family:"Arial"; font-size:18px;  }
+.fonttop{font-size: 10px;color: #ffffff;}
