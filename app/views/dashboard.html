@@ -7,21 +7,32 @@
     <!-- /.row -->
 <!-- new Content Row 1-->
     <div class="row">
-    <div class="col-md-12" >
-        <br>
-        <h2 class="font-glad" align="center">We're glad you're here</h2>
-        <p align="center">Welcome to our new Reimagined Member site.</p>
-        <br>
-        <div class="anthemAlert"><i class="glyphicon glyphicon-info-sign"></i>&nbsp;Read <a href="https://www.anthem.com/health-insurance/about-us/pressreleasedetails/WI/2015/1813/statement-regarding-cyber-attack-against-anthem" target="_blank">here</a> for more information about Anthem's recent cyber attack.</div>
-       
+        <div class="col-md-12" >
+            <br>
+            <h2 class="font-glad" align="center">We're glad you're here</h2>
+            <p align="center">Welcome to our new Reimagined Member site.</p>
+            <br>
+            <div class="anthemAlert"><i class="glyphicon glyphicon-info-sign"></i>&nbsp;Read <a href="https://www.anthem.com/health-insurance/about-us/pressreleasedetails/WI/2015/1813/statement-regarding-cyber-attack-against-anthem" target="_blank">here</a> for more information about Anthem's recent cyber attack.</div>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12">
             <h2 class="text-center m-t-45">Your Recent Claims</h2> 
-           <div ng-controller="claimsDashboardCtrl"> 
-		    <div ui-grid="gridOptions" class="grid"></div>
-           </div>
+            <div ng-controller="claimsDashboardCtrl"> 
+            <!-- <div ui-grid="gridOptions" class="grid"></div> -->
+                <table class="col-md-12 claimsDashTable">
+                    <thead>
+                        <tr>
+                            <th class="col-md-2">SERVICE DATE</th><th class="col-md-3">PATIENT</th><th class="col-md-3">PROVIDER</th><th class="col-md-2">TOTAL BILLED</th><th class="col-md-2">STATUS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="claim in claimsData | limitTo:3">
+                            <td class="col-md-2">{{claim.serviceDate | dateFormat}}</td><td class="col-md-3">{{claim.patient}}</td><td class="col-md-3">{{claim.provider}}</td><td class="col-md-2">{{claim.totalBilled}}</td><td class="col-md-2">{{claim.status}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 
