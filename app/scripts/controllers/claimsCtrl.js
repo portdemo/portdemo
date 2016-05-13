@@ -3,6 +3,7 @@
 var app = angular.module('portalApp');
 
 app.controller('claimsCtrl', ['$scope', '$http', function($scope, $http){
+	$scope.isDatePicker = false;
 	$scope.gridOptions = {
 	    expandableRowTemplate: '../views/claimsdetails.html',
 	    expandableRowHeight: 250
