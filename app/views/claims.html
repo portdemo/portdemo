@@ -1,4 +1,15 @@
-<h3 class="text-center">YOU HAVE 50 CLAIMS IN THE LAST 3 MONTHS</h3>
 <div ng-controller="claimsCtrl">
+	<h3 class="text-center">YOU HAVE {{gridOptions.data.length}} CLAIM(S) IN THE LAST 3 MONTHS</h3>
+	<div class="text-center dt-pick-link"><span ng-click="isDatePicker = !isDatePicker"><i class="glyphicon glyphicon-plus"></i>&nbsp;VIEW DATE RANGE FILTER</span></div>
+	<div class="dt-pick-comp" ng-show="isDatePicker">
+		<div class="col-md-3 col-md-offset-3">
+			<span>From:</span>
+			<input type="text" uib-datepicker-popup ng-model="dateFrom"/>
+		</div>
+		<div class="col-md-6">
+			<span>To:</span>
+			<input type="text" uib-datepicker-popup ng-model="dateTo"/>
+		</div>
+	</div>
     <div ui-grid="gridOptions" ui-grid-expandable class="grid"></div>
 </div>

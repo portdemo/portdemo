@@ -3,6 +3,7 @@
 var app = angular.module('portalApp');
 
 app.controller('claimsCtrl', ['$scope', '$http', function($scope, $http){
+	$scope.isDatePicker = false;
 	$scope.gridOptions = {
 	    expandableRowTemplate: '../views/claimsdetails.html',
 	    expandableRowHeight: 250
@@ -29,23 +30,6 @@ app.controller('claimsCtrl', ['$scope', '$http', function($scope, $http){
 }]);
 
 app.controller('claimsDashboardCtrl', ['$scope', '$http', function($scope, $http){
-	/*$scope.gridOptions = {
-	    expandableRowTemplate: '<div style="height:150px;">Sundar</div>',
-	    expandableRowHeight: 100
-	};
-    
-	$scope.gridOptions.columnDefs = [
-		{ name: 'serviceDate'},
-		{ name: 'patient'},
-		{ name: 'provider'},
-		{ name: 'totalBilled'},
-		{ name: 'status'}
-	];
-
-	$scope.gridOptions.onRegisterApi = function(gridApi){
-		$scope.gridApi = gridApi;
-	};*/
-
 	$http.get('data/claimsData.json')
         .success(function(data) {
            /*$scope.gridOptions.data =  $scope.data;*/
