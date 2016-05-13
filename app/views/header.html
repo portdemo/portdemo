@@ -1,14 +1,15 @@
+<div ng-controller="loginCtrl">
 <nav class="navbar-tabs" role="navigation">
     <div class="navbar-header col-sm-5 col-xs-4 vertical-center">
       <div class="dropdown">
         <div class="dropdown-toggle flex h4" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="color:#00609A;">
-          <span class="glyphicon glyphicon-menu-hamburger vertical-center" style="font-size:35px;"></span>
+          <span class="glyphicon glyphicon-menu-hamburger vertical-center"></span>
           <span class="vertical-center">Menu</span>
         </div>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
           <li><a ui-sref="home">About Us</a></li>
           <li><a ui-sref="home">Contact Us</a></li>
-          <li><a ui-sref="home">Logout</a></li>
+          <li ng-if="login.length > 0" ng-click="logout();"><a>Logout</a></li>
         </ul>
       </div>
     </div>
@@ -19,10 +20,10 @@
     
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
-                    <span class="glyphicon glyphicon-menu-hamburger vertical-center" style="font-size:35px;"></span>
+                    <span class="glyphicon glyphicon-menu-hamburger vertical-center"></span>
                 </button>
     
-    <div class="collapse navbar-collapse pull-right col-sm-5 col-xs-5 vertical-center nopadding" id="bs-example-navbar-collapse-1">
+    <div class="collapse navbar-collapse pull-right col-sm-5 col-xs-5 vertical-center nopadding" id="bs-example-navbar-collapse-1" ng-if="login.length > 0">
       <ul class="nav navbar-nav navlinks-right hidden-xs">
         <li>
           <a ui-sref="home">

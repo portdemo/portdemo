@@ -11,27 +11,33 @@ angular.module('portalApp')
  /*
  * Controller for authentication for login
  */
-  .controller('loginCtrl', function ($scope, $state, $localStorage, loginService, $timeout) {
+  .controller('loginCtrl', function ($scope, $state, $localStorage, loginService, $timeout, $rootScope) {
     /*if($localStorage.useremail){
         alert('yes stored');
     }*/
     $scope.hidden = true;
+    if($localStorage.username.length > 0){
+      $rootScope.login = $localStorage.username;
+    }
+
     $scope.onLogin = function(username,password){
         //console.log(username +' '+ password);
         //console.log('you clicked');
         loginService.getUser().then(function(data) {
             $scope.users = data;
-            var login = false;
+            //var login = false;
             var len = $scope.users.length;
             for(var i=0;i<len;i++){
                 if(username == $scope.users[i].userName && password == $scope.users[i].password){
-                    login = true;
+                    //login = true;
                     $localStorage.username = username;
+                    $rootScope.login = $localStorage.username;
+                    $state.go('home',{reload:true});
                     //console.log($localStorage.useremail);
                 }
             }
-            if(login){
-                $state.go('home');
+            if($scope.login){
+                $state.go('home',{reload:true});
             }
             else {
                 //alert('Invalid Username or Password');
@@ -42,10 +48,16 @@ angular.module('portalApp')
                 }, 5000);
                 return false;
             }
-        })
+        });
         
         //$state.go('home');
     }
+
+    $scope.logout = function(){
+      $localStorage.username = '';
+      $rootScope.login = $localStorage.username;
+      $state.go('login', {reload: true});
+    };
   });
 
   /*
