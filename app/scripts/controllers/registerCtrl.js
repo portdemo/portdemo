@@ -8,13 +8,16 @@ app.controller('registerCtrl',['$scope','$state', /*AuthService,*/ function($sco
 
 
 // Need to add register button action function and reset status.
-
+$scope.startFade=true;
+$scope.hidden=true;
 $scope.formReset=function(){
 	  $scope.signupForm.$setPristine();
               $scope.signupForm.$setUntouched();
 }
 $scope.registerUser=function(){
 	console.log($scope.newUser);
-	
+	$scope.hidden=false; 
+	$scope.statusMsg="User has been registered successfully!";
+	$scope.regStatus=true;
 }
 }]);
