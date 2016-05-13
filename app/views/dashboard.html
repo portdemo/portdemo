@@ -15,10 +15,10 @@
             <div class="anthemAlert"><i class="glyphicon glyphicon-info-sign"></i>&nbsp;Read <a href="https://www.anthem.com/health-insurance/about-us/pressreleasedetails/WI/2015/1813/statement-regarding-cyber-attack-against-anthem" target="_blank">here</a> for more information about Anthem's recent cyber attack.</div>
         </div>
     </div>
-    <div ng-controller="claimsDashboardCtrl" class="row">
+    <div class="row">
         <div class="col-md-12">
             <h2 class="text-center m-t-45">Your Recent Claims</h2> 
-            <div > 
+            <div ng-controller="claimsDashboardCtrl"> 
             <!-- <div ui-grid="gridOptions" class="grid"></div> -->
                 <table class="col-md-12 claimsDashTable">
                     <thead>
@@ -30,22 +30,11 @@
                         <tr ng-repeat="claim in claimsData | limitTo:3">
                             <td class="col-md-2">{{claim.serviceDate | dateFormat}}</td><td class="col-md-3">{{claim.patient}}</td><td class="col-md-3">{{claim.provider}}</td><td class="col-md-2">{{claim.totalBilled}}</td><td class="col-md-2">{{claim.status}}</td>
                         </tr>
-<!--
-                        <tr>
-                            <span ng-bind="errorMessage"> </span> 
-                        </tr>
--->
                     </tbody>
                 </table>
-                <div class="clearfix"></div>
-                <div class="alert alert-danger" ng-show="show">
-                    <span class="glyphicon glyphicon-exclamation-sign"></span>
-                    <span ng-bind="errorMessage"> </span> 
-               </div>
             </div>
         </div>
     </div>
-     
 
     <div class="m-t-15">
         <button ui-sref='claims' class="btn btn-warning center-block ">View All Claims</button>
