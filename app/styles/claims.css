@@ -13,6 +13,10 @@
 }
 
 .dt-pick-comp {
-    margin: 0 0 40px;
+    margin: 0 0 50px;
     height: 20px;
+}
+
+.clearButton {
+    margin-top: 20px;
 }

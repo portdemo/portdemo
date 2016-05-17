@@ -1,15 +1,35 @@
 <div ng-controller="claimsCtrl">
 	<h3 class="text-center">YOU HAVE {{gridOptions.data.length}} CLAIM(S) IN THE LAST 3 MONTHS</h3>
-	<div class="text-center dt-pick-link"><span ng-click="isDatePicker = !isDatePicker"><i class="glyphicon glyphicon-plus"></i>&nbsp;VIEW DATE RANGE FILTER</span></div>
+	<div class="dt-pick-link">
+		<div class="col-md-7 text-right">
+			<span ng-click="isDatePicker = !isDatePicker"><i class="glyphicon glyphicon-plus"></i>&nbsp;VIEW DATE RANGE FILTER</span>
+		</div>
+		<div class="text-center">
+			<label>Search:&nbsp;</label><input type="text" ng-model="searchText" ng-change="refreshData()" />
+		</div>
+	</div>
 	<div class="dt-pick-comp" ng-show="isDatePicker">
 		<div class="col-md-3 col-md-offset-3">
 			<span>From:</span>
-			<input type="text" uib-datepicker-popup ng-model="dateFrom"/>
+			<p class="input-group">
+				<input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dtFrom" is-open="popups.opened1" datepicker-options="dateOptions1" ng-required="true" show-button-bar="false" />
+				<span class="input-group-btn">
+					<button type="button" class="btn btn-default" ng-click="open1($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+				</span>
+			</p>
 		</div>
-		<div class="col-md-6">
+		<div class="col-md-3">
 			<span>To:</span>
-			<input type="text" uib-datepicker-popup ng-model="dateTo"/>
+			<p class="input-group">
+				<input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dtTo" is-open="popups.opened2" datepicker-options="dateOptions2" ng-required="true" show-button-bar="false" />
+				<span class="input-group-btn">
+					<button type="button" class="btn btn-default" ng-click="open2($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+				</span>
+			</p>
 		</div>
+		<!-- <div class="col-md-2">
+			<button class="btn btn-default clearButton" ng-click="ClearDateRange()">Clear</button>
+		</div> -->
 	</div>
     <div ui-grid="gridOptions" ui-grid-expandable class="grid"></div>
 </div>
