@@ -1,6 +1,6 @@
 'use strict';
 var app=angular.module('portalApp');
-app.controller('registerCtrl',['$scope','$state', '$http',/*AuthService,*/ function($scope,$state,$http){
+app.controller('registerCtrl',['$scope','$state', '$http','registerService', function($scope,$state,$http, registerService){
 //If user is authenticated already, redirected to home page.  
 /* if(Authentication.isauthenticated()===true){
               $state.go('home');  
@@ -25,12 +25,14 @@ $scope.registerUser=function(){
 $scope.newUser.memberId="3";
 $scope.newUser.planName="testing";
 $scope.newUser.lastLogin="2016-05-12 11:00:00.000000";
-console.log(angular.toJson($scope.newUser));
-$http.post('http://10.236.91.188:8080/ClaimsPortal/requestbody',angular.toJson($scope.newUser))
+//console.log(angular.toJson($scope.newUser));
+/*$http.post('http://10.236.91.188:8080/ClaimsPortal/requestbody',angular.toJson($scope.newUser))
 		.success(function(data, status){
 			console.log(data);
 			console.log(status);
-		});
+		}); */
+registerService.registerUser(angular.toJson($scope.newUser));
+
 
 	/*
 		$scope.showStatus=true;
@@ -51,3 +53,23 @@ $scope.closeAlert=function(){
 };
  
 }]);
+
+
+
+angular.module('portalApp')
+    .factory('registerService', registerFactory);
+
+    function registerFactory($http) {
+      this.$inject = ['$http'];
+      return {
+        registerUser: registerUser
+              };
+
+      function registerUser(data) {
+      	console.log(data);
+        $http.post('http://10.236.91.188:8080/ClaimsPortal/requestbody',data)
+		.success(function(data, status){
+		//	console.log(data);
+			console.log(status);
+		});
+	}}
