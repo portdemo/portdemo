@@ -49,11 +49,11 @@ angular
   .run(function($rootScope, $state, $stateParams, $location, $localStorage) {
   $rootScope.$on("$stateChangeStart", function(event, toState, toParams, fromState, fromParams) {
     if(toState.authRequired) {
-      if($localStorage.username == ''){
+      if($localStorage.username == '' || $localStorage.username == undefined || $localStorage.username == null){
         $state.go('login',{'reload':true});
       }
     }else{
-      if($localStorage.username.length>0){
+      if($localStorage.username){
         $state.go($state.current.name,{reload:true});
       }
     }
