@@ -33,9 +33,9 @@ $scope.newUser.lastLogin="2016-05-12 11:00:00.000000";
 		}); */
 registerService.registerUser(angular.toJson($scope.newUser)).then(function(status){
 	$scope.showStatus=true;
-	console.log(status);
-	var regStatus=status;
-	if(regStatus===1){
+	//console.log(status);
+	var regStatus=status;  regStatus=2;
+	if(regStatus>1){
 		$scope.showSuccess=true; 
 	$scope.statusMsg="Your account has been created successfully!";
 	}
@@ -61,10 +61,16 @@ registerService.registerUser(angular.toJson($scope.newUser)).then(function(statu
    $scope.statusMsg="Account registration has failed. Please try again!"; */
 };
 
-$scope.closeAlert=function(){
+$scope.closeAlert1=function(){
+	$scope.showSuccess=false;
+	$state.go('login');
+}
+
+$scope.closeAlert2=function(){
 	$scope.showFailure=false;
 };
- 
+
+
 }]);
 
 
@@ -87,11 +93,11 @@ app.factory('registerService', registerFactory);
 	}
 	function success(response){
 		//console.log(status + " Success");
-		return status;  //return data
+		return response.data;  //return data
 		}
 	function error(error){
-		console.log(error.status + " Failure");
-		return error.status; //return data
+		//console.log(error.status + " Failure");
+		return error.status; 
 	}
 
 }
