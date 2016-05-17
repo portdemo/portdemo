@@ -78,13 +78,12 @@
               
 <!--Alert messages-->
 <div ng-if="showStatus">
-<div class="alert alert-success" ng-if="showSuccess" role="alert"><a ui-sref="login" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+<uib-alert type="success" close="closeAlert1()" ng-if="showSuccess" role="alert" dismiss-on-timeout="10000" > 
                           <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" ></span>
                           <span class="sr-only" ng-class="{fade: startFade}">Success:</span>
                               {{statusMsg}}
-                      </div>
-{{showFailure}}
-<uib-alert type="danger" close="closeAlert()" ng-if="showFailure" role="alert" dismiss-on-timeout="6000" > 
+                      </uib-alert>   
+<uib-alert type="danger" close="closeAlert2()" ng-if="showFailure" role="alert" dismiss-on-timeout="6000" > 
                           <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" ></span>
                           <span class="sr-only" ng-class="{fade: startFade}">Failure:</span>
                               {{statusMsg}}
