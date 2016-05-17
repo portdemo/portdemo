@@ -17,7 +17,7 @@ angular
     'ngStorage',
     'ui.grid',
     'ui.grid.expandable'
-  ]).config(function($stateProvider, $urlRouterProvider) {
+  ]).config(function($stateProvider, $urlRouterProvider,$httpProvider) {
     $stateProvider
       .state('login', {
         url: '/login',
@@ -45,6 +45,15 @@ angular
       });   
 
     $urlRouterProvider.otherwise('/login');
+
+    
+
+$httpProvider.defaults.headers.common = {};
+$httpProvider.defaults.headers.post = {};
+$httpProvider.defaults.headers.put = {};
+$httpProvider.defaults.headers.patch = {};
+
+
   })
   .run(function($rootScope, $state, $stateParams, $location, $localStorage) {
   $rootScope.$on("$stateChangeStart", function(event, toState, toParams, fromState, fromParams) {

@@ -83,8 +83,8 @@
                           <span class="sr-only" ng-class="{fade: startFade}">Success:</span>
                               {{statusMsg}}
                       </div>
-
-<uib-alert type="danger" close="closeAlert()" ng-if="showFailure" role="alert" dismiss-on-timeout="6000" >
+{{showFailure}}
+<uib-alert type="danger" close="closeAlert()" ng-if="showFailure" role="alert" dismiss-on-timeout="6000" > 
                           <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" ></span>
                           <span class="sr-only" ng-class="{fade: startFade}">Failure:</span>
                               {{statusMsg}}
