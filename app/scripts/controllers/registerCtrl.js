@@ -1,3 +1,6 @@
+
+
+
 'use strict';
 var app=angular.module('portalApp');
 app.controller('registerCtrl',['$scope','$state', '$http','registerService', function($scope,$state,$http, registerService){
@@ -24,7 +27,8 @@ $scope.registerUser=function(){
 //	console.log(angular.toJson($scope.newUser));
 $scope.newUser.memberId="3";
 $scope.newUser.planName="testing";
-$scope.newUser.lastLogin="2016-05-12 11:00:00.000000";
+$scope.newUser.lastLogin=new Date();
+//console.log($scope.newUser.lastLogin);
 //console.log(angular.toJson($scope.newUser));
 /*$http.post('http://10.236.91.188:8080/ClaimsPortal/requestbody',angular.toJson($scope.newUser))
 		.success(function(data, status){
@@ -34,7 +38,7 @@ $scope.newUser.lastLogin="2016-05-12 11:00:00.000000";
 registerService.registerUser(angular.toJson($scope.newUser)).then(function(status){
 	$scope.showStatus=true;
 	//console.log(status);
-	var regStatus=status;  regStatus=2;
+	var regStatus=status; 
 	if(regStatus>1){
 		$scope.showSuccess=true; 
 	$scope.statusMsg="Your account has been created successfully!";
@@ -85,7 +89,7 @@ app.factory('registerService', registerFactory);
               };
 
       function registerUser(data) {
-      	console.log(data);
+      	//console.log(data);
        	return $http
        	.post('http://10.236.91.188:8080/ClaimsPortal/requestbody',data)
 		.then(success)
