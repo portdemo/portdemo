@@ -7,8 +7,19 @@
           <!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true" ui-sref="login">×</button>-->
        <div class="col-lg-6 col-lg-offset-3" > 
           <h2 class="text-center">User Registration</h2>
-     
-      <div class="modal-body">
+     <!--Alert messages-->
+<div ng-if="showStatus">
+<uib-alert type="success" close="closeAlert1()" ng-if="showSuccess" role="alert" dismiss-on-timeout="6000"  > 
+                          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" ></span>
+                          <span class="sr-only" ng-class="{fade: startFade}">Success:</span>
+                              {{statusMsg}}
+                      </uib-alert>   
+<uib-alert type="danger" close="closeAlert2()" ng-if="showFailure" role="alert" > 
+                          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" ></span>
+                          <span class="sr-only" ng-class="{fade: startFade}">Failure:</span>
+                              {{statusMsg}}
+                      </uib-alert>   
+</div>
           <form class="form col-md-12 center-block" name="signupForm" ng-submit="signupForm.$valid && registerUser()" novalidate>
             <fieldset class="form-group">
             <input tooltip-class="formTooltip" tooltip-placement="bottom" uib-tooltip="Provide your first name. Special characters and numbers are not allowed"  tooltip-trigger="mouseenter" tooltip-enable="!newUser.firstName" required type="text" class="form-control input-lg" id="register" placeholder="First Name" name="firstName"  ng-maxlength="25" ng-pattern="/^[a-zA-Z ]*$/" ng-model="newUser.firstName" />
@@ -76,19 +87,7 @@
               <input required type="submit" class="btn btn-success btn-lg"
                ng-disabled="!signupForm.$valid" value="Register" />
               
-<!--Alert messages-->
-<div ng-if="showStatus">
-<uib-alert type="success" close="closeAlert1()" ng-if="showSuccess" role="alert" dismiss-on-timeout="10000" > 
-                          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" ></span>
-                          <span class="sr-only" ng-class="{fade: startFade}">Success:</span>
-                              {{statusMsg}}
-                      </uib-alert>   
-<uib-alert type="danger" close="closeAlert2()" ng-if="showFailure" role="alert" dismiss-on-timeout="6000" > 
-                          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" ></span>
-                          <span class="sr-only" ng-class="{fade: startFade}">Failure:</span>
-                              {{statusMsg}}
-                      </uib-alert>   
-</div>
+
               <button ui-sref="login" class="btn btn-info btn-lg pull-right">Cancel</button>
          <button type="reset" class="btn btn-info btn-lg pull-right resetBtn" ng-click="formReset()"> Reset </button>
 
@@ -101,7 +100,7 @@
    <!--  <div class="modal-footer">
                <div class="col-md-12">
      
-		  </div> 	 -->  
+      </div>   -->  
       </div>
   </div>
   </div>
