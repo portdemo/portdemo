@@ -3,13 +3,9 @@
 
 'use strict';
 var app=angular.module('portalApp');
-app.controller('registerCtrl',['$scope','$state', '$http','registerService', '$localStorage', function($scope,$state,$http, registerService, $localStorage){
-//If user is authenticated already, redirected to home page.  
-/* if(Authentication.isauthenticated()===true){
-              $state.go('home');  
-          }  */
+app.controller('registerCtrl',['$scope','$state', '$http','registerService', '$rootScope',function($scope,$state,$http, registerService, $rootScope){
 
-  if($localStorage.username){
+  if(($rootScope.login !== undefined) && ($rootScope.login !== '')){
          $state.go('home');
      }  
 
