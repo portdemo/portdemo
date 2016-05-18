@@ -61,7 +61,7 @@ app.controller('claimsCtrl', ['$scope', '$http', '$filter', function($scope, $ht
 	function disabled(data) {
 		var date = data.date,
 		mode = data.mode;
-		return mode === 'day' && (date <= $scope.dtFrom);
+		return mode === 'day' && (date < $scope.dtFrom);
 	}
 
 	$scope.dateOptions2 = {
@@ -75,8 +75,8 @@ app.controller('claimsCtrl', ['$scope', '$http', '$filter', function($scope, $ht
 		/*if ($scope.dtFrom === '') {
 			return;
 		}*/
-		$scope.dtFrom.setHours(0,0,0,0);
-		$scope.dtTo.setHours(0,0,0,0);
+		$scope.dtFrom.setUTCHours(0,0,0,0);
+		$scope.dtTo.setUTCHours(0,0,0,0);
 		var $dtToepoch = Date.parse($scope.dtTo);
 		var $dtFromEpoch = Date.parse($scope.dtFrom);
 
@@ -119,8 +119,8 @@ app.controller('claimsDashboardCtrl', ['$scope', '$http', function($scope, $http
 
 app.filter("dateFormat", function($filter){
 	return function(x) {
-		var _date = $filter('date')(new Date(x), 'dd-MMM-yyyy');
-        return _date;
+		x = x.replace(/\s.*/, '').split('-');
+		return x[2]+'/'+x[1]+'/'+x[0];
     };
 });
 
@@ -128,7 +128,9 @@ app.filter("dateFormat", function($filter){
 app.filter("dateRangeFilter", function(){
 	return function(tableData, fromDate, toDate) {
 		var filterData = tableData.filter(function(rowData) {
-			var serviceDate = Date.parse(rowData.serviceDate);
+			var y = rowData.serviceDate;
+			y = y.replace(/\s.*/, '');
+			var serviceDate = Date.parse(y);
 			if(serviceDate >= fromDate &&  serviceDate <= toDate) {
 				return rowData;
 			}
