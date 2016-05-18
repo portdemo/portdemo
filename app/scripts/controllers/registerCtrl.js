@@ -31,7 +31,7 @@ registerService.registerUser(angular.toJson($scope.newUser)).then(function(statu
 	$scope.showStatus=true;
 	//console.log(status);
 	var regStatus=status; 
-	if(regStatus>1){
+	if(regStatus>0){
 		$scope.showSuccess=true; 
 	$scope.statusMsg="Your account has been created successfully!";
 	}
