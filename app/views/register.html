@@ -7,12 +7,12 @@
 <div ng-if="showStatus">
 <uib-alert class="col-lg-6 col-lg-offset-3" type="success" close="closeAlert1()" ng-if="showSuccess" role="alert" dismiss-on-timeout="6000"  > 
                           <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" ></span>
-                          <span class="sr-only" ng-class="{fade: startFade}">Success:</span>
+                          <span class="sr-only" >Success:</span>
                               {{statusMsg}}
                       </uib-alert>   
 <uib-alert type="danger" close="closeAlert2()" ng-if="showFailure" role="alert" > 
                           <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" ></span>
-                          <span class="sr-only" ng-class="{fade: startFade}">Failure:</span>
+                          <span class="sr-only" >Failure:</span>
                               {{statusMsg}}
                       </uib-alert>   
 </div>
