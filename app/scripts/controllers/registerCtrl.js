@@ -32,7 +32,9 @@ registerService.registerUser(angular.toJson($scope.newUser)).then(function(statu
 	var regStatus=status; 
 	if(regStatus===1 || regStatus ===2){
 		$scope.showSuccess=true; 
-	$scope.statusMsg="Your account has been created successfully!";
+		    $scope.showFailure=false;
+
+	$scope.statusMsg="Your account has been created successfully! Redirecting to login...";
 	}
 	else if(regStatus<1){
 	$scope.showSuccess=false;
@@ -47,6 +49,11 @@ registerService.registerUser(angular.toJson($scope.newUser)).then(function(statu
    	$scope.newUser.emailAddress='';
 	}
 
+}).catch(function(status){
+	$scope.showSuccess=false;
+    $scope.showFailure=true;
+   	$scope.statusMsg=status + " : Unexpected network error occured. Please try again"; 
+   	
 });
 
 
