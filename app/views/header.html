@@ -6,9 +6,9 @@
           <span class="glyphicon glyphicon-menu-hamburger vertical-center"></span>
           <span class="vertical-center">Menu</span>
         </div>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-          <li><a ui-sref="home">About Us</a></li>
-          <li><a ui-sref="home">Contact Us</a></li>
+        <ul class="dropdown-menu" id="dropdownMenu1" aria-labelledby="dropdownMenu1">
+          <li><a id="aboutus" ui-sref="home">About Us</a></li>
+          <li><a id="contactus" ui-sref="home">Contact Us</a></li>
           <li ng-if="login.length > 0" ng-click="logout();"><a>Logout</a></li>
         </ul>
       </div>
