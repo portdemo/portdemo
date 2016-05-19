@@ -75,8 +75,8 @@ app.controller('claimsCtrl', ['$scope', '$http', '$filter', function($scope, $ht
 	function filterData() {
 		var $dtToepoch = 0, $dtFromEpoch = 0, filterData = gridData;
 		if ($scope.dtFrom !== '') {
-			$scope.dtFrom.setUTCHours(0,0,0,0);
-			$scope.dtTo.setUTCHours(0,0,0,0);
+			/*$scope.dtFrom.setUTCHours(0,0,0,0);
+			$scope.dtTo.setUTCHours(0,0,0,0);*/
 			$dtToepoch = Date.parse($scope.dtTo);
 			$dtFromEpoch = Date.parse($scope.dtFrom);
 			filterData = $filter('dateRangeFilter')(gridData, $dtFromEpoch, $dtToepoch);
@@ -136,7 +136,9 @@ app.filter("dateRangeFilter", function(){
 		var filterData = tableData.filter(function(rowData) {
 			var y = rowData.serviceDate;
 			y = y.replace(/\s.*/, '');
-			var serviceDate = Date.parse(y);
+			var serviceDate = new Date(Date.parse(y));
+			serviceDate.setHours(0,0,0,0);
+			serviceDate = Date.parse(serviceDate);
 			if(serviceDate >= fromDate &&  serviceDate <= toDate) {
 				return rowData;
 			}
