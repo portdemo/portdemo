@@ -79,7 +79,7 @@ angular.module('portalApp')
             }
         }
     })
- });
+ })
 
 /*
 *Created a Factory for login and banner to show data
