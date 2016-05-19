@@ -8,7 +8,7 @@ app.controller('claimsCtrl', ['$scope', '$http', '$filter', 'claimsService', '$r
 		$state.go('login');
 	}
 
-	var gridData = [];
+	$scope.gridData = [];
 	$scope.isDatePicker = false;
 	$scope.gridOptions = {
 	    expandableRowTemplate: '../views/claimsdetails.html',
@@ -25,7 +25,7 @@ app.controller('claimsCtrl', ['$scope', '$http', '$filter', 'claimsService', '$r
 	];
 
 	claimsService.getClaims().then(function(data){
-		gridData = data;
+		$scope.gridData = data;
 		$scope.gridOptions.data = data;
 	}).catch(function(error){
 		alert("There is the problem in the connectivity");
@@ -65,35 +65,35 @@ app.controller('claimsCtrl', ['$scope', '$http', '$filter', 'claimsService', '$r
 
 	$scope.format = 'dd-MMMM-yyyy';
 
-	function filterData() {
-		var $dtToepoch = 0, $dtFromEpoch = 0, filterData = gridData;
+	$scope.filterData = function() {
+		var $dtToepoch = 0, $dtFromEpoch = 0, filterData = $scope.gridData;
 		if ($scope.dtFrom !== '') {
 			/*$scope.dtFrom.setUTCHours(0,0,0,0);
 			$scope.dtTo.setUTCHours(0,0,0,0);*/
 			$dtToepoch = Date.parse($scope.dtTo);
 			$dtFromEpoch = Date.parse($scope.dtFrom);
-			filterData = $filter('dateRangeFilter')(gridData, $dtFromEpoch, $dtToepoch);
+			filterData = $filter('dateRangeFilter')($scope.gridData, $dtFromEpoch, $dtToepoch);
 		}
 		$scope.gridOptions.data = $filter('filter')(filterData, $scope.searchText);
 	}
 
 	/*$scope.$watch('dtTo', function(newVal, oldVal) {
-		filterData();
+		$scope.filterData();
 	});*/
 
 	$scope.refreshData = function() {
-		filterData();
+		$scope.filterData();
 	};
 
 	$scope.filterDateRange = function(){
-		filterData();
+		$scope.filterData();
 		/*$scope.gridOptions.data = $filter('filter')(gridData, '', undefined);
 		$scope.dtFrom = $scope.dtTo = '';*/
 	};
 
 	$scope.clearDateRange = function(){
 		$scope.dtFrom = $scope.dtTo = '';
-		filterData();
+		$scope.filterData();
 	};
 
 	/******* End of Datepicker *******/

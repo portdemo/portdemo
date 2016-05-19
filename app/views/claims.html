@@ -2,7 +2,7 @@
 	<h3 class="text-center">YOU HAVE {{gridOptions.data.length}} CLAIM(S) IN THE LAST 3 MONTHS</h3>
 	<div class="dt-pick-link">
 		<div class="col-md-7 text-right">
-			<span ng-click="isDatePicker = !isDatePicker"><i class="glyphicon glyphicon-plus"></i>&nbsp;VIEW DATE RANGE FILTER</span>
+			<span ng-click="isDatePicker = !isDatePicker"><i class="glyphicon" ng-class="{'glyphicon-plus': !isDatePicker, 'glyphicon-minus': isDatePicker}"></i>&nbsp;VIEW DATE RANGE FILTER</span>
 		</div>
 		<div class="text-center">
 			<label>Search:&nbsp;</label><input type="text" ng-model="searchText" ng-change="refreshData()" />
