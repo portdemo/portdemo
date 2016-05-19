@@ -16,7 +16,7 @@ app.controller('claimsCtrl', ['$scope', '$http', '$filter', function($scope, $ht
 		{ name: 'provider'},
 		{ name: 'totalBilled', cellFilter: 'currency'},
 		//{ name: 'status'}
-		{ name: 'status', cellTemplate: '<div><i class="glyphicon" ng-class="{\'glyphicon-ban-circle\' : row.entity.status === \'Denied\', \'glyphicon-exclamation-sign\' : row.entity.status === \'Pending\', \'glyphicon-ok-sign\' : row.entity.status === \'Processed\' }"></i>{{row.entity.status}}</div>'}
+		{ name: 'status', cellTemplate: '<div><i class="glyphicon" ng-class="{\'glyphicon-ban-circle\' : row.entity.status === \'Denied\', \'glyphicon-exclamation-sign\' : row.entity.status === \'Pending\', \'glyphicon-ok-sign\' : row.entity.status === \'Processed\' }"></i>&nbsp;{{row.entity.status}}</div>'}
 
 	];
 
