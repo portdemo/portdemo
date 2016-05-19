@@ -20,9 +20,9 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       // bower:js
-      'bower_components/jquery/dist/jquery.js',
+      //'bower_components/jquery/dist/jquery.js',
       'bower_components/angular/angular.js',
-      'bower_components/bootstrap/dist/js/bootstrap.js',
+      //'bower_components/bootstrap/dist/js/bootstrap.js',
       'bower_components/angular-messages/angular-messages.js',
       'bower_components/angular-ui-router/release/angular-ui-router.js',
       'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
@@ -32,9 +32,9 @@ module.exports = function(config) {
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',
-      'test/mock/**/*.js',
-      'test/spec/**/*.js',
-        'app/**/*.html'
+      //'test/mock/**/*.js',
+      'test/spec/**/*.js'
+        //'app/**/*.html'
     ],
 
     // list of files / patterns to exclude
@@ -45,7 +45,7 @@ module.exports = function(config) {
 },
 
 preprocessors: {
-    'app/**/*.html': ['ng-html2js']
+    //'app/**/*.html': ['ng-html2js']
 }, 
 
     // web server port
@@ -66,7 +66,8 @@ preprocessors: {
     // Which plugins to enable
     plugins: [
       'karma-chrome-launcher',
-      'karma-jasmine', 'karma-ng-html2js-preprocessor'
+      'karma-jasmine',
+      // 'karma-ng-html2js-preprocessor'
     ],
 
     // Continuous Integration mode

@@ -11,13 +11,20 @@ describe('Controller: MainCtrl', function () {
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    MainCtrl = $controller('MainCtrl', {
+    MainCtrl = $controller('loginCtrl', {
       $scope: scope
       // place here mocked dependencies
     });
   }));
 
-  /* it('should attach a list of awesomeThings to the scope', function () {
-    expect(MainCtrl.awesomeThings.length).toBe(3);
-  }); */
+  it('Login Failure', function () {
+    scope.onLogin('sri','sriram');
+    expect($rootScope.login.length).toBe(0);
+}); 
+  it('Login Success', function () {
+    scope.onLogin('test1','test1234');
+    expect($rootScope.login.length).toBeGreaterThan(0);
+}); 
+
+
 });
