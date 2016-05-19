@@ -14,7 +14,7 @@
 			<p class="input-group">
 				<input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dtFrom" is-open="popups.opened1" datepicker-options="dateOptions1" ng-required="true" show-button-bar="false" />
 				<span class="input-group-btn">
-					<button type="button" class="btn btn-default" ng-click="open1($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+					<button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
 				</span>
 			</p>
 		</div>
@@ -23,13 +23,16 @@
 			<p class="input-group">
 				<input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dtTo" is-open="popups.opened2" datepicker-options="dateOptions2" ng-required="true" show-button-bar="false" />
 				<span class="input-group-btn">
-					<button type="button" class="btn btn-default" ng-click="open2($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+					<button type="button" class="btn btn-default" ng-click="open2()"><i class="glyphicon glyphicon-calendar"></i></button>
 				</span>
 			</p>
 		</div>
-		<!-- <div class="col-md-2">
-			<button class="btn btn-default clearButton" ng-click="ClearDateRange()">Clear</button>
-		</div> -->
+		<div class="col-md-1">
+			<button class="btn btn-default clearButton" ng-click="filterDateRange()">Filter</button>
+		</div>
+		<div>
+			<button class="btn btn-default clearButton" ng-click="clearDateRange()">Clear</button>
+		</div>
 	</div>
     <div ui-grid="gridOptions" ui-grid-expandable class="grid"></div>
 </div>
