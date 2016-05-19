@@ -12,7 +12,7 @@
             <h2 class="font-glad" align="center">We're glad you're here</h2>
             <p align="center">Welcome to our new Reimagined Member site.</p>
             <br>
-            <div class="anthemAlert"><i class="glyphicon glyphicon-info-sign"></i>&nbsp;Read <a href="https://www.anthem.com/health-insurance/about-us/pressreleasedetails/WI/2015/1813/statement-regarding-cyber-attack-against-anthem" target="_blank">here</a> for more information about Anthem's recent cyber attack.</div>
+            <div class="anthemAlert"><i class="glyphicon glyphicon-info-sign"></i>&nbsp;Read <a href="https://kxsites.accenture.com/page/home.aspx" target="_blank">here</a> for more information about our services.</div>
         </div>
     </div>
     <div class="row">
@@ -28,7 +28,8 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat="claim in claimsData | limitTo:3">
-                            <td class="col-md-2">{{claim.serviceDate | dateFormat}}</td><td class="col-md-3">{{claim.patient}}</td><td class="col-md-3">{{claim.provider}}</td><td class="col-md-2">{{claim.totalBilled}}</td><td class="col-md-2">{{claim.status}}</td>
+                            <td class="col-md-2">{{claim.serviceDate | dateFormat}}</td><td class="col-md-3">{{claim.patient}}</td><td class="col-md-3">{{claim.provider}}</td><td class="col-md-2">{{claim.totalBilled}}</td><td class="col-md-2">
+                            <span class="glyphicon" ng-class="{'glyphicon-ban-circle' : claim.status === 'Denied', 'glyphicon-exclamation-sign' : claim.status === 'Pending', 'glyphicon-ok-sign' : claim.status === 'Processed' }"></span>{{claim.status}}</td>
                         </tr>
                     </tbody>
                 </table>

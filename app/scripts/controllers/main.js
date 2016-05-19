@@ -38,19 +38,18 @@ angular.module('portalApp')
                 $state.go('home',{reload:true});
             }
             else {
-                //alert('Invalid Username or Password');
-                 $timeout(function(){
-                    $scope.hidden = false;
-                    $scope.startFade = true;
-                    $scope.error = "Invalid Username or password";
-                }, 5000);
+                alert('Invalid Username or Password');
+               /* $timeout(function(){
+                   // $scope.hidden = false;
+                  //  $scope.startFade = true;
+                  // $scope.error = "Invalid Username or password";
+                }, 5000);*/
                 return false;
             }
         });
         
         //$state.go('home');
     }
-
     $scope.logout = function(){
       $localStorage.username = '';
       $rootScope.login = $localStorage.username;
@@ -96,7 +95,7 @@ angular.module('portalApp')
 
       function getUser () {
         return $http
-          .get('http://10.236.91.188:8080/SpringRestfulWebServicesWithJSONExample/member')
+          .get('http://10.236.91.188:8080/ClaimsPortal/member')
           .then(complete)
           .catch(failed);
       }
