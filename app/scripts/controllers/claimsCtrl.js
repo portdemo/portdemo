@@ -30,7 +30,7 @@ app.controller('claimsCtrl', ['$scope', '$http', '$filter', function($scope, $ht
 		return statusClass;
 	}
 
-	$http.get('http://10.236.91.188:8080/SpringRestfulWebServicesWithJSONExample/claims.json')
+	$http.get('http://10.236.91.188:8080/ClaimsPortal/claims.json')
 	    .success(function(data) {
 	    	gridData = data;
 	        $scope.gridOptions.data = data;
