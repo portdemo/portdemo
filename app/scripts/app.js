@@ -67,4 +67,7 @@ $httpProvider.defaults.headers.patch = {};
       }
     }
   });
-});
+})
+.controller('HelloWorldController', ['$scope', function($scope) {
+$scope.greeting = 'Hello World!';
+}]);

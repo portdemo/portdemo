@@ -1,23 +1,39 @@
 'use strict';
 
-describe('Controller: MainCtrl', function () {
+describe('Hello World example', function() {
 
-  // load the controller's module
-  beforeEach(module('portalApp'));
+beforeEach(module('portalApp'));
+var HelloWorldController, scope;
 
-  var MainCtrl,
-    scope;
+beforeEach(inject(function ($rootScope, $controller) {
+scope = $rootScope.$new();
+HelloWorldController = $controller('HelloWorldController', {
+$scope: scope
+});
+}));
+it('says hello world!', function () {
+expect(scope.greeting).toEqual('Hello World!');
+});
 
-  // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope) {
-    scope = $rootScope.$new();
-    MainCtrl = $controller('MainCtrl', {
-      $scope: scope
-      // place here mocked dependencies
-    });
-  }));
+});
 
-  /* it('should attach a list of awesomeThings to the scope', function () {
-    expect(MainCtrl.awesomeThings.length).toBe(3);
-  }); */
+describe('Banner Unit Testing', function(){
+   beforeEach(module('portalApp'));
+   var bannerController, scope, loginService, $localStorage;
+    beforeEach(inject(function($rootScope, $controller)
+    {
+       scope = $rootScope.$new();   
+       bannerController = $controller('bannerCtrl', {
+           $scope: scope
+      });
+    }));
+     beforeEach(inject(function($injector) {
+        loginService = $injector.get('loginService');
+        $localStorage = $injector.get('$localStorage');
+     }));
+    it('says unit test', function(){
+        for(var i=0; i<loginService.getUser.length; i++){
+        expect(loginService.getUser[i].firstName).toEqual('testsss');
+        }
+    })
 });
