@@ -27,9 +27,12 @@
 				</span>
 			</p>
 		</div>
-		<!-- <div class="col-md-2">
-			<button class="btn btn-default clearButton" ng-click="ClearDateRange()">Clear</button>
-		</div> -->
+		<div class="col-md-1">
+			<button class="btn btn-default clearButton" ng-click="filterDateRange()">Filter</button>
+		</div>
+		<div>
+			<button class="btn btn-default clearButton" ng-click="clearDateRange()">Clear</button>
+		</div>
 	</div>
     <div ui-grid="gridOptions" ui-grid-expandable class="grid"></div>
 </div>
