@@ -30,7 +30,7 @@ module.exports = function(config) {
       'bower_components/angular-ui-grid/ui-grid.js',
       'bower_components/angular-mocks/angular-mocks.js',
       'app/scripts/**/*.js',
-      'test/spec/**/*.js',
+      'test/spec/controllers/*.js',
     ],
 
     // list of files / patterns to exclude
