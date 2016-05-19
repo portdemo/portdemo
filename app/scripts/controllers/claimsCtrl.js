@@ -107,7 +107,7 @@ app.controller('claimsCtrl', ['$scope', '$http', '$filter', function($scope, $ht
 }]);
 
 app.controller('claimsDashboardCtrl', ['$scope', '$http', function($scope, $http){
-	$http.get('http://10.236.91.188:8080/SpringRestfulWebServicesWithJSONExample/claims.json')
+	$http.get('http://10.236.91.188:8080/ClaimsPortal/claims.json')
 		.success(function(data) {
 			if(data !== ''){
 				$scope.claimsData = data;
