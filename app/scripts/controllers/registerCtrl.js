@@ -16,6 +16,7 @@ $scope.showStatus=false;
 $scope.formReset=function(){
 	  $scope.signupForm.$setPristine();
               $scope.signupForm.$setUntouched();
+            $scope.showStatus=false;
 };
 
 
@@ -44,7 +45,6 @@ registerService.registerUser(angular.toJson($scope.newUser)).then(function(statu
    	$scope.statusMsg="Username or Email already belongs to another user. Try again"; 
    	$scope.newUser.userName='';
    	$scope.newUser.emailAddress='';
-		
 	}
 
 });
@@ -71,7 +71,7 @@ $scope.closeAlert2=function(){
     	function registerUser(data) {
       	//console.log(data);
        	return $http
-       	.post('http://10.236.91.188:8080/ClaimsPortal/requestbody',data)
+       	.post('http://10.236.91.188:8080/ClaimsPortal/validateMember',data)
 		.then(success)
 		.catch(failure);
 	}
