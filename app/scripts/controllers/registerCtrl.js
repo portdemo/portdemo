@@ -9,7 +9,6 @@ app.controller('registerCtrl',['$scope','$state', '$http','registerService', '$r
          $state.go('home');
      }  
 
-$scope.startFade=true;
 $scope.showFailure=false;
 $scope.showSuccess=false; 
 $scope.showStatus=false;
@@ -30,15 +29,24 @@ registerService.registerUser(angular.toJson($scope.newUser)).then(function(statu
 	$scope.showStatus=true;
 	//console.log(status);
 	var regStatus=status; 
-	if(regStatus>=1){
+	if(regStatus===1 || regStatus ===2){
 		$scope.showSuccess=true; 
 	$scope.statusMsg="Your account has been created successfully!";
 	}
-	if(regStatus<1){
+	else if(regStatus<1){
 	$scope.showSuccess=false;
     $scope.showFailure=true;
    	$scope.statusMsg="Account registration has failed. Please try again!"; 
 	}
+	if(regStatus===5){
+	$scope.showSuccess=false;
+    $scope.showFailure=true;
+   	$scope.statusMsg="Username or Email already belongs to another user. Try again"; 
+   	$scope.newUser.userName='';
+   	$scope.newUser.emailAddress='';
+		
+	}
+
 });
 
 
