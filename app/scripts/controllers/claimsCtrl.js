@@ -2,7 +2,12 @@
 
 var app = angular.module('portalApp');
 
-app.controller('claimsCtrl', ['$scope', '$http', '$filter', 'claimsService', function($scope, $http, $filter, claimsService){
+app.controller('claimsCtrl', ['$scope', '$http', '$filter', 'claimsService', '$rootScope', '$state', function($scope, $http, $filter, claimsService, $rootScope, $state){
+	
+	if(($rootScope.login === undefined) && ($rootScope.login === '')){
+		$state.go('login');
+	}
+
 	var gridData = [];
 	$scope.isDatePicker = false;
 	$scope.gridOptions = {
