@@ -19,6 +19,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+      // bower:js
       'bower_components/jquery/dist/jquery.js',
       'bower_components/angular/angular.js',
       'bower_components/bootstrap/dist/js/bootstrap.js',
@@ -29,8 +30,12 @@ module.exports = function(config) {
       'bower_components/ngstorage/ngStorage.js',
       'bower_components/angular-ui-grid/ui-grid.js',
       'bower_components/angular-mocks/angular-mocks.js',
+      // endbower
       'app/scripts/**/*.js',
       'test/spec/controllers/*.js',
+      //'test/mock/**/*.js',
+      'test/spec/**/*.js',
+       // 'app/**/*.html'
     ],
 
     // list of files / patterns to exclude
@@ -39,20 +44,10 @@ module.exports = function(config) {
     ngHtml2JsPreprocessor: { 
     moduleName: 'templates'
 },
-   reporters: ['progress', 'coverage', 'html'], 
 
-    preprocessors: {  
-      '**/app/scripts/**/*.js': 'coverage'
-    },
-
-    coverageReporter: {  
-    type: 'html',
-    dir: 'coverage'
-    },
-      
-    htmlReporter: {
-      outputFile: 'karma.report.html'
-    },
+preprocessors: {
+    //'app/**/*.html': ['ng-html2js']
+}, 
 
     // web server port
     port: 8080,
@@ -72,9 +67,7 @@ module.exports = function(config) {
     // Which plugins to enable
     plugins: [
       'karma-chrome-launcher',
-      'karma-jasmine', 
-      'karma-ng-html2js-preprocessor',
-      'karma-coverage'
+      'karma-jasmine' //'karma-ng-html2js-preprocessor'
     ],
 
     // Continuous Integration mode
@@ -88,9 +81,9 @@ module.exports = function(config) {
     logLevel: config.LOG_INFO,
 
     // Uncomment the following lines if you are using grunt's server to run the tests
-     //proxies: {
+    // proxies: {
     //   '/': 'http://localhost:9000/'
-     //},
+    // },
     // URL root prevent conflicts with the site root
     // urlRoot: '_karma_'
   });

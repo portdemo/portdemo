@@ -2,13 +2,13 @@
 <nav class="navbar-tabs" role="navigation">
     <div class="navbar-header col-sm-5 col-xs-4 vertical-center">
       <div class="dropdown">
-        <div class="dropdown-toggle flex h4" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="color:#00609A;">
+        <div class="dropdown-toggle flex h4" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
           <span class="glyphicon glyphicon-menu-hamburger vertical-center"></span>
           <span class="vertical-center">Menu</span>
         </div>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-          <li><a ui-sref="home">About Us</a></li>
-          <li><a ui-sref="home">Contact Us</a></li>
+        <ul class="dropdown-menu" id="dropdownMenu1" aria-labelledby="dropdownMenu1">
+          <li><a id="aboutus" ui-sref="home">About Us</a></li>
+          <li><a id="contactus" ui-sref="home">Contact Us</a></li>
           <li ng-if="login.length > 0" ng-click="logout();"><a>Logout</a></li>
         </ul>
       </div>
@@ -26,44 +26,44 @@
     <div class="collapse navbar-collapse pull-right col-sm-5 col-xs-5 vertical-center nopadding" id="bs-example-navbar-collapse-1" ng-if="login.length > 0">
       <ul class="nav navbar-nav navlinks-right hidden-xs">
         <li>
-          <a ui-sref="home">
+          <a href="https://policies.accenture.com/" target="_blank">
           <span class="glyphicon glyphicon-search"></span>
           </a>
         </li>
         <li>
-          <a ui-sref="home">
+          <a href="https://portal.accenture.com" target="_blank">
           <span class="glyphicon glyphicon-th"></span>
           </a>
         </li>
         <li>
-          <a ui-sref="home">
+          <a href="https://email.accenture.com" target="_blank">
           <span class="glyphicon glyphicon-envelope"></span>
           </a>
         </li>
         <li>
-          <a ui-sref="home">
+          <a href="https://people.accenture.com" target="_blank">
           <span class="glyphicon glyphicon-user"></span>
           </a>
         </li>
       </ul>
       <ul class="visible-xs pull-right list-unstyled">
         <li>
-          <a ui-sref="home">
+          <a href="https://policies.accenture.com/" target="_blank">
           <span class="glyphicon glyphicon-search"></span> Search
           </a>
         </li>
         <li>
-          <a ui-sref="home">
+          <a href="https://portal.accenture.com" target="_blank">
           <span class="glyphicon glyphicon-th"></span> Dashboard
           </a>
         </li>
         <li>
-          <a ui-sref="home">
+          <a href="https://email.accenture.com" target="_blank">
           <span class="glyphicon glyphicon-envelope"></span> Messages
           </a>
         </li>
         <li>
-          <a ui-sref="home">
+          <a href="https://people.accenture.com" target="_blank">
           <span class="glyphicon glyphicon-user"></span> Settings
           </a>
         </li>

@@ -38,12 +38,14 @@ footer {
 .navbar-nav > li > a{ color:white !important; }
 .nav > li > a:hover, .nav > li > a:focus { background: none !important; }
 .navbar-collapse ul.navlinks-right li { background: #00609A; margin: 5px; border-radius: 50%; }
+.dropdown-toggle.flex.h4 {color:#00609A;}
 .flex{display:flex;}
 .vertical-center{align-self: center;}
 .navbar-collapse > ul{font-size: 20px; padding-top:12px; padding-bottom: 10px;}
 .nopadding{padding:0px;}
 .nomargin{margin:0px;}
 .glyphicon.glyphicon-menu-hamburger.vertical-center{font-size:35px;}
+.glyphicon.glyphicon-menu-hamburger.vertical-center.hamburger {color:#00609A;}
 .banner .overlay{position: absolute;top: 0px;left: 12px;width: 98%;height: 100%;color: white;background: rgba(0, 0, 0, .2);}
 .banner .overlay .banner_content{position:relative; top:130px;display: inline-block; margin:auto !important;}
 .banner .overlay h2{font-family: 'Open Sans', sans-serif;}
@@ -58,29 +60,6 @@ footer {
 }
 .expandedRow {
     margin: 15px 0;
-}
-.expandedRow button {
-    margin-right: 20px;
-}
-.totalBilled {
-    border-top: 1px solid grey;
-    padding-top: 15px;
-    padding-left: 200px;
-}
-.scrollFiller, .grid.ui-grid, .ui-grid-header, .ui-grid-header-cell, .ui-grid-row .ui-grid-cell, .ui-grid-pinned-container.ui-grid-pinned-container-left .ui-grid-cell:last-child, .ui-grid-pinned-container.ui-grid-pinned-container-left .ui-grid-header-cell:last-child {
-    border: 0px;
-}
-.ui-grid-expandable-buttons-cell i {
-    color: #ff9900;
-}
-.ui-grid-top-panel, .ui-grid-row .ui-grid-cell.ui-grid-row-header-cell {
-    background: transparent;
-}
-.ui-grid-column-menu-button {
-    display: none;
-}
-.ui-grid-cell-contents {
-    outline: none;
 }
 .footer{
     background-color: #336699 ;padding-bottom: 5px; padding-top: 10px;

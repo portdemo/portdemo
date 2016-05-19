@@ -1,10 +1,11 @@
     <div class="container">
+
       <div class="col-md-12" style="padding: 50px;">
         <div class="col-md-6 col-md-offset-3">
             <h2 class="text-center">LOGIN</h2>
             <div id="loginModal" class=" " role="dialog" aria-hidden="true">
                 <div class="" ng-controller="loginCtrl">
-                  <form class="form col-md-12 center-block" name="signinForm" ng-submit="onLogin(username, password)">
+                  <form class="form col-md-12 center-block" name="signinForm" ng-submit="onLogin(username, password)" novalidate="true">
                     <div class="form-group">
                       <input type="text"  tooltip-class="formTooltip" tooltip-placement="bottom" uib-tooltip="Provide your username" tooltip-trigger="mouseenter"  type="text" class="form-control input-lg" ng-model="username" name="username" placeholder="Username" required>
                       <div class="help-block" ng-messages="signinForm.username.$error" ng-if="signinForm.username.$dirty">
@@ -12,7 +13,7 @@
                     </div>
                     </div>
                     <div class="form-group">
-                      <input type="password"  tooltip-class="formTooltip" tooltip-placement="bottom" uib-tooltip="Provide your password" tooltip-trigger="mouseenter" type="text" class="form-control input-lg" ng-model="password" name="password" placeholder="Password" required>
+                      <input type="password" tooltip-class="formTooltip" tooltip-placement="bottom" uib-tooltip="Provide your password" tooltip-trigger="mouseenter" type="text" class="form-control input-lg" ng-model="password" name="password" placeholder="Password" required>
                       <div class="help-block" ng-messages="signinForm.password.$error" ng-if="signinForm.password.$dirty">
                         <p ng-message="required">Your password is required.</p>
                       </div>
@@ -23,8 +24,9 @@
                       </div>
                     </div>
                     <div class="form-group">
-                      <button type="submit" class="btn btn-primary btn-lg btn-block">Sign In</button>
-                      <a ui-sref="register" class="pull-right"><strong>Not a member? Register Now!</strong></a>
+                     <a ui-sref="register" class=""><strong>Not a member? Register Now!</strong></a>
+                      <button type="submit" class="btn btn-info btn-lg pull-right"ng-model="username" ng-model="password" ng-disabled="!signinForm.$valid" >Login</button>
+                     
                       <!--<button class="btn btn-primary btn-lg btn-block" ui-sref="register">Register</button>-->
                     </div>
                   </form>
