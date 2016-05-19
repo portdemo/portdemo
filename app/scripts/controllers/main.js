@@ -38,19 +38,18 @@ angular.module('portalApp')
                 $state.go('home',{reload:true});
             }
             else {
-                //alert('Invalid Username or Password');
-                 $timeout(function(){
-                    $scope.hidden = false;
-                    $scope.startFade = true;
-                    $scope.error = "Invalid Username or password";
-                }, 5000);
+                alert('Invalid Username or Password');
+               /* $timeout(function(){
+                   // $scope.hidden = false;
+                  //  $scope.startFade = true;
+                  // $scope.error = "Invalid Username or password";
+                }, 5000);*/
                 return false;
             }
         });
         
         //$state.go('home');
     }
-
     $scope.logout = function(){
       $localStorage.username = '';
       $rootScope.login = $localStorage.username;
