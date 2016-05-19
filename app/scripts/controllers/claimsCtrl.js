@@ -2,7 +2,7 @@
 
 var app = angular.module('portalApp');
 
-app.controller('claimsCtrl', ['$scope', '$http', '$filter', function($scope, $http, $filter){
+app.controller('claimsCtrl', ['$scope', '$http', '$filter', 'claimsService', function($scope, $http, $filter, claimsService){
 	var gridData = [];
 	$scope.isDatePicker = false;
 	$scope.gridOptions = {
@@ -17,26 +17,14 @@ app.controller('claimsCtrl', ['$scope', '$http', '$filter', function($scope, $ht
 		{ name: 'totalBilled', cellFilter: 'currency'},
 		//{ name: 'status'}
 		{ name: 'status', cellTemplate: '<div><i class="glyphicon" ng-class="{\'glyphicon-ban-circle\' : row.entity.status === \'Denied\', \'glyphicon-exclamation-sign\' : row.entity.status === \'Pending\', \'glyphicon-ok-sign\' : row.entity.status === \'Processed\' }"></i>&nbsp;{{row.entity.status}}</div>'}
-
 	];
 
-	function getStatusClass(row) {
-		var statusClass = "glyphicon-ok-sign";
-		if (row.entity.status === "Denied") {
-			statusClass = "glyphicon-ban-circle";
-		} else if (row.entity.status === "Pending") {
-			statusClass = "glyphicon-exclamation-sign";
-		}
-		return statusClass;
-	}
-
-	$http.get('http://10.236.91.188:8080/ClaimsPortal/claims.json')
-	    .success(function(data) {
-	    	gridData = data;
-	        $scope.gridOptions.data = data;
-	    }).error(function(error){
-			alert("There is the problem in the conectivity");
-		});
+	claimsService.getClaims().then(function(data){
+		gridData = data;
+		$scope.gridOptions.data = data;
+	}).catch(function(error){
+		alert("There is the problem in the connectivity");
+	});
 
     /******* Start of Datepicker *******/
 
@@ -106,21 +94,21 @@ app.controller('claimsCtrl', ['$scope', '$http', '$filter', function($scope, $ht
 	/******* End of Datepicker *******/
 }]);
 
-app.controller('claimsDashboardCtrl', ['$scope', '$http', function($scope, $http){
-	$http.get('http://10.236.91.188:8080/ClaimsPortal/claims.json')
-		.success(function(data) {
-			if(data !== ''){
-				$scope.claimsData = data;
-				$scope.show = false;
-			}
-			else{
-				$scope.errorMessage="No claims data for the current user";
-				$scope.show = true;
-			}
-		}).error(function(error){
-			$scope.errorMessage="There is a problem in the data base conectivity";
+app.controller('claimsDashboardCtrl', ['$scope', '$http', 'claimsService', function($scope, $http, claimsService){
+	claimsService.getClaims().then(function(data){
+		if(data !== ''){
+			$scope.claimsData = data;
+			$scope.show = false;
+		}
+		else{
+			$scope.errorMessage="No claims data for the current user";
 			$scope.show = true;
-		});
+		}
+	}).catch(function(error){
+		$scope.errorMessage="There is a problem in the data base conectivity";
+		$scope.show = true;
+
+	});
 }]);
 
 app.filter("dateFormat", function($filter){
@@ -145,4 +133,17 @@ app.filter("dateRangeFilter", function(){
 		});
 		return filterData;
     };
+});
+
+app.factory("claimsService", function($http) {
+	return {
+		getClaims: function() {
+			return $http.get('http://10.236.91.188:8080/ClaimsPortal/claims.json')
+			.then(function(data) {
+				return data.data;
+			}).catch(function(error){
+				return error;
+			});
+		}
+	}
 });
