@@ -15,8 +15,9 @@ app.controller('claimsCtrl', ['$scope', '$http', '$filter', function($scope, $ht
 		{ name: 'patient'},
 		{ name: 'provider'},
 		{ name: 'totalBilled', cellFilter: 'currency'},
-		{ name: 'status'}
-		/*{ name: 'status', cellTemplate: '<div><i class="glyphicon" ng-class="getStatusClass(row)"></i>{{row.entity.status}}</div>'}*/
+		//{ name: 'status'}
+		{ name: 'status', cellTemplate: '<div><i class="glyphicon" ng-class="{\'glyphicon-ban-circle\' : row.entity.status === \'Denied\', \'glyphicon-exclamation-sign\' : row.entity.status === \'Pending\', \'glyphicon-ok-sign\' : row.entity.status === \'Processed\' }"></i>{{row.entity.status}}</div>'}
+
 	];
 
 	function getStatusClass(row) {
@@ -29,7 +30,7 @@ app.controller('claimsCtrl', ['$scope', '$http', '$filter', function($scope, $ht
 		return statusClass;
 	}
 
-	$http.get('http://10.236.91.188:8080/SpringRestfulWebServicesWithJSONExample/claims.json')
+	$http.get('http://10.236.91.188:8080/ClaimsPortal/claims.json')
 	    .success(function(data) {
 	    	gridData = data;
 	        $scope.gridOptions.data = data;
@@ -106,7 +107,7 @@ app.controller('claimsCtrl', ['$scope', '$http', '$filter', function($scope, $ht
 }]);
 
 app.controller('claimsDashboardCtrl', ['$scope', '$http', function($scope, $http){
-	$http.get('http://10.236.91.188:8080/SpringRestfulWebServicesWithJSONExample/claims.json')
+	$http.get('http://10.236.91.188:8080/ClaimsPortal/claims.json')
 		.success(function(data) {
 			if(data !== ''){
 				$scope.claimsData = data;

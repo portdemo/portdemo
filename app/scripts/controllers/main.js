@@ -79,7 +79,7 @@ angular.module('portalApp')
             }
         }
     })
- });
+ })
 
 /*
 *Created a Factory for login and banner to show data
@@ -96,7 +96,7 @@ angular.module('portalApp')
 
       function getUser () {
         return $http
-          .get('http://10.236.91.188:8080/SpringRestfulWebServicesWithJSONExample/member')
+          .get('http://10.236.91.188:8080/ClaimsPortal/member')
           .then(complete)
           .catch(failed);
       }
