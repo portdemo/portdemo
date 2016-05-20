@@ -7,7 +7,7 @@ app.controller('claimsCtrl', ['$scope', '$http', '$filter', 'claimsService', '$r
 	if(($rootScope.login === undefined) && ($rootScope.login === '')){
 		$state.go('login');
 	}
-
+ 
 	$scope.gridData = [];
 	$scope.isDatePicker = false;
 	$scope.gridOptions = {

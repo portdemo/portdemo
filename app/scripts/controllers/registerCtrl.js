@@ -8,11 +8,11 @@ app.controller('registerCtrl',['$scope','$state', '$http','registerService', '$r
   if(($rootScope.login !== undefined) && ($rootScope.login !== '')){
          $state.go('home');
      }  
-
+ 
 $scope.showFailure=false;
 $scope.showSuccess=false; 
 $scope.showStatus=false;
-
+ 
 $scope.formReset=function(){
 	$scope.signupForm.$setPristine();
     $scope.signupForm.$setUntouched();
