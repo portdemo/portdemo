@@ -14,9 +14,9 @@ $scope.showSuccess=false;
 $scope.showStatus=false;
 
 $scope.formReset=function(){
-	  $scope.signupForm.$setPristine();
-              $scope.signupForm.$setUntouched();
-            $scope.showStatus=false;
+	$scope.signupForm.$setPristine();
+    $scope.signupForm.$setUntouched();
+    $scope.showStatus=false;
 };
 
 
