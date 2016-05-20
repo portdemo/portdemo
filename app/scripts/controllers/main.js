@@ -65,6 +65,7 @@ angular.module('portalApp')
      if(!$localStorage.username || $localStorage.username == ""){
          $state.go('login');
      }
+    $scope.banners = [];
     loginService.getUser().then(function(data){
         $scope.banners = data;
         var leng = $scope.banners.length;
