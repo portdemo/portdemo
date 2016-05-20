@@ -65,7 +65,7 @@ describe('Registration Controller Test Suite', function() {
         expect($scope.showSuccess).toBe(false);
         expect($scope.showStatus).toBe(false);
 
-    });
+    });  
     
     it('CloseAlert1 for success alert function should set show parameter to false', function(){
       $scope.closeAlert1();
