@@ -1,8 +1,8 @@
     <footer>
-        <div class="footer"  >
+        <div class="footer" ng-controller="loginCtrl">
            <div class="container narrow row-fluid">
               <div class="col-md-12 text-center" >
-                  <h3 class="fontcolorsize">Samiam, let us help you with your plan</h3>
+                  <h3 class="fontcolorsize" ng-if="login.length > 0">{{login}}, let us help you with your plan</h3>
                </div> <div class="col-md-1 " ></div>
 
                 <div class="col-md-4 fontcolor" >
