@@ -18,35 +18,36 @@ angular.module('portalApp')
     $scope.hidden = true;
     if($localStorage.username || $localStorage.username !=""){
       $rootScope.login = $localStorage.username;
+       // $state.go('home',{reload:true});
     }
 
     $scope.onLogin = function(username,password){
         //console.log(username +' '+ password);
         //console.log('you clicked');
-        loginService.getUser().then(function(data) {
+        $scope.logindata = {};
+        $scope.logindata.userName = username;
+        $scope.logindata.password = password
+        loginService.getUser(angular.toJson($scope.logindata)).then(function(data) {
             $scope.users = data;
-            //var login = false;
-            var len = $scope.users.length;
-            for(var i=0;i<len;i++){
-                if(username == $scope.users[i].userName && password == $scope.users[i].password){
-                    //login = true;
-                    $localStorage.username = username;
-                    $rootScope.login = $localStorage.username;
-                }
-            }
-            if($rootScope.login){
-                $state.go('home',{reload:true});
-            }
-            else {
-                alert('Invalid Username or Password');
-               /* $timeout(function(){
-                   // $scope.hidden = false;
-                  //  $scope.startFade = true;
-                  // $scope.error = "Invalid Username or password";
-                }, 5000);*/
+            if(JSON.stringify($scope.users) === '{}'){
+                 $timeout(function(){
+                    $scope.hidden = false;
+                    $scope.startFade = true;
+                   $scope.error = "Invalid Username or password";
+                }, 1000);
                 return false;
             }
-        });
+            else{
+                //console.log($scope.users.firstName +" "+ $scope.users.memberId + " "+ $scope.users.planName + " " + $scope.users.lastLogin );
+                $localStorage.fName = $scope.users.firstName;
+                $localStorage.mId = $scope.users.memberId;
+                $localStorage.pName = $scope.users.planName;
+                $localStorage.lLogin = $scope.users.lastLogin;
+                $localStorage.username = username;
+                $rootScope.login = $localStorage.username;
+                $state.go('home',{reload:true});
+            }
+        }); 
         
         //$state.go('home');
     }
@@ -65,21 +66,16 @@ angular.module('portalApp')
      if(!$localStorage.username || $localStorage.username == ""){
          $state.go('login');
      }
-    $scope.banners = [];
-    loginService.getUser().then(function(data){
-        $scope.banners = data;
-        var leng = $scope.banners.length;
-        for(var i=0;i<leng;i++){
-            if($localStorage.username == $scope.banners[i].userName){
-                $scope.first_name =$scope.banners[i].firstName;
-                $scope.member_id =$scope.banners[i].memberId;
-                $scope.plan_name =$scope.banners[i].planName;
-                $scope.last_login =$scope.banners[i].lastLogin.replace(/ /g,'T');
-                $scope.newDate = new Date($scope.last_login);
-            }
-        }
-    })
- })
+    
+    if($localStorage.username != ""){
+        $scope.first_name = $localStorage.fName;
+        $scope.member_id = $localStorage.mId;
+        $scope.plan_name = $localStorage.pName;
+        $scope.last_login = $localStorage.lLogin.replace(/ /g,'T');
+        $scope.newDate = new Date($scope.last_login);
+    }
+})
+
 
 /*
 *Created a Factory for login and banner to show data
@@ -94,9 +90,9 @@ angular.module('portalApp')
         getUser: getUser
       };
 
-      function getUser () {
+      function getUser (data) {
         return $http
-          .get('http://10.236.91.188:8080/ClaimsPortal/member')
+          .post('http://10.236.91.188:8080/ClaimsPortal/validateLoginUser',data)
           .then(complete)
           .catch(failed);
       }
