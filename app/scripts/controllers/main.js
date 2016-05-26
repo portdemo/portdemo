@@ -36,6 +36,16 @@ angular.module('portalApp')
                    $scope.error = "Invalid Username or password";
                 }, 1000);
                 return false;
+            //var login = false;
+            var len = $scope.users.length;
+            for(var i=0;i<len;i++){
+                if(username == $scope.users[i].userName && password == $scope.users[i].password){
+                    //login = true;
+                    $localStorage.username = username;
+                    $rootScope.login = $localStorage.username;  
+                    $localStorage.firstName = $scope.users[i].firstName; 
+                    $rootScope.firstName = $localStorage.firstName;               
+                }
             }
             else{
                 //console.log($scope.users.firstName +" "+ $scope.users.memberId + " "+ $scope.users.planName + " " + $scope.users.lastLogin );
