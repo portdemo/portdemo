@@ -32,8 +32,7 @@ angular.module('portalApp')
                     //login = true;
                     $localStorage.username = username;
                     $rootScope.login = $localStorage.username;  
-                    $localStorage.firstName = $scope.users[i].firstName; 
-                    $rootScope.firstName = $localStorage.firstName;               
+                    $rootScope.first_name = $localStorage.first_name;             
                 }
             }
             if($rootScope.login){
@@ -74,6 +73,7 @@ angular.module('portalApp')
         for(var i=0;i<leng;i++){
             if($localStorage.username == $scope.banners[i].userName){
                 $scope.first_name =$scope.banners[i].firstName;
+                $localStorage.first_name = $scope.first_name;
                 $scope.member_id =$scope.banners[i].memberId;
                 $scope.plan_name =$scope.banners[i].planName;
                 $scope.last_login =$scope.banners[i].lastLogin.replace(/ /g,'T');
