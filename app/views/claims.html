@@ -1,34 +1,3 @@
-<style type="text/css">
-  
-.nav.nav-tabs {
-    background-color: blue;
-}
-.nav-tabs > li.active:hover, .nav-tabs > li.focus:hover {
-    background-color: white;
-}
-.nav-tabs > li.active a {
-    border-radius: 0;
-}
-
-</style>
-<uib-tabset active="active">
-    <uib-tab index="0" heading="Static title">Static content</uib-tab>
-    <uib-tab index="$index + 1" ng-repeat="tab in tabs" heading="{{tab.title}}" disable="tab.disabled">
-      {{tab.content}}
-    </uib-tab>
-    <uib-tab index="3" heading="hello">
-     
-      I've got an HTML heading, and a select callback. Pretty cool!      I've got an HTML heading, and a select callback. Pretty cool!
-      I've got an HTML heading, and a select callback. Pretty cool!
-      I've got an HTML heading, and a select callback. Pretty cool!
-      I've got an HTML heading, and a select callback. Pretty cool!
-      I've got an HTML heading, and a select callback. Pretty cool!
-      I've got an HTML heading, and a select callback. Pretty cool!
-      I've got an HTML heading, and a select callback. Pretty cool!
-      I've got an HTML heading, and a select callback. Pretty cool!
-
-    </uib-tab>
-  </uib-tabset>
 <div ng-controller="claimsCtrl">
 	<h3 class="text-center">YOU HAVE {{gridOptions.data.length}} CLAIM(S) IN THE LAST 3 MONTHS</h3>
 	<div class="dt-pick-link">
