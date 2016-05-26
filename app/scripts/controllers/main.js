@@ -31,7 +31,9 @@ angular.module('portalApp')
                 if(username == $scope.users[i].userName && password == $scope.users[i].password){
                     //login = true;
                     $localStorage.username = username;
-                    $rootScope.login = $localStorage.username;
+                    $rootScope.login = $localStorage.username;  
+                    $localStorage.firstName = $scope.users[i].firstName; 
+                    $rootScope.firstName = $localStorage.firstName;               
                 }
             }
             if($rootScope.login){
