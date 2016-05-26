@@ -16,7 +16,7 @@ angular
     'ui.validate',
     'ngStorage',
     'ui.grid',
-    'ui.grid.expandable',
+    'ui.grid.expandable'
   ]).config(function($stateProvider, $urlRouterProvider,$httpProvider) {
     $stateProvider
       .state('login', {
