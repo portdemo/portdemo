@@ -43,8 +43,7 @@ angular.module('portalApp')
                     //login = true;
                     $localStorage.username = username;
                     $rootScope.login = $localStorage.username;  
-                    $localStorage.firstName = $scope.users[i].firstName; 
-                    $rootScope.firstName = $localStorage.firstName;               
+                    $rootScope.first_name = $localStorage.first_name;             
                 }
             }
             else{
@@ -86,6 +85,22 @@ angular.module('portalApp')
     }
 })
 
+    $scope.banners = [];
+    loginService.getUser().then(function(data){
+        $scope.banners = data;
+        var leng = $scope.banners.length;
+        for(var i=0;i<leng;i++){
+            if($localStorage.username == $scope.banners[i].userName){
+                $scope.first_name =$scope.banners[i].firstName;
+                $localStorage.first_name = $scope.first_name;
+                $scope.member_id =$scope.banners[i].memberId;
+                $scope.plan_name =$scope.banners[i].planName;
+                $scope.last_login =$scope.banners[i].lastLogin.replace(/ /g,'T');
+                $scope.newDate = new Date($scope.last_login);
+            }
+        }
+    })
+ })
 
 /*
 *Created a Factory for login and banner to show data
