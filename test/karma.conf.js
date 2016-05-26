@@ -30,6 +30,7 @@ module.exports = function(config) {
       'bower_components/ngstorage/ngStorage.js',
       'bower_components/angular-ui-grid/ui-grid.js',
       'bower_components/angular-mocks/angular-mocks.js',
+      'bower_components/angular-animate/angular-animate.js',
       // endbower
       'app/scripts/**/*.js',
       'test/spec/controllers/*.js',

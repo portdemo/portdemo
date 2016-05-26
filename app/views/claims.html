@@ -1,3 +1,84 @@
+<style>
+:root {
+  --main-theme-color: #00609A;
+  --main-font-family: "Calibri", sans-serif;
+  --main-btn-color: #ea6262;
+}
+.section-content { color:var(--main-theme-color);} 
+
+.nav.nav-tabs.nav-justified {
+    background-color: #00609A;
+}
+.nav-tabs.nav-justified > li.active:hover, .nav-tabs > li.focus:hover {
+    background-color: white;
+}
+.nav-tabs.nav-justified > li.active a {
+    border-radius: 0;
+}
+
+</style>
+<div class="col-xs-12 panel with-nav-tabs panel-default">
+                <div class="section-header">
+                        <ul class="nav nav-tabs nav-justified">
+                            <li><a href="#tab1default" data-toggle="tab">My Plan</a></li>
+                            <li><a href="#tab2default" data-toggle="tab">Find Care</a></li>
+                            <li><a href="#tab3default" data-toggle="tab">Support</a></li>
+                        </ul>
+                </div>
+                <div class="panel-body">
+                    <div class="tab-content">
+                        <div class="tab-pane" id="tab1default">
+                          <div class="col-xs-12 col-sm-3">
+                            <h3>My Claim</h3>
+                            <ul class="list-unstyled">
+                              <li><a>Account Summary</a></li>
+                              <li><a>Pharmacy</a></li>
+                              <li><a>ID Card</a></li>
+                              <li><a>Referalls and authorizations</a></li>
+                              <li><a>Pay my Bill</a></li>
+                              <li><a>Primary care physican</a></li>
+                            </ul>
+                          </div>
+                          <div class="col-xs-12 col-sm-4">
+                           <h3>Claims</h3>
+                           <div><a>Claims</a></div>
+                           <h3>Benefits</h3>
+                            <ul class="list-unstyled">
+                              <li><a>Find Benefits</a></li>
+                              <li><a>Plan Information</a></li>
+                              <li><a>Plan Progress</a></li>
+                              <li><a>Service Limits</a></li>
+                            </ul>
+                          </div>
+
+                        </div>
+                        <div class="tab-pane " id="tab2default">
+                        <div class="col-xs-12 col-sm-3">
+                            <h3>Find Care</h3>
+                            <ul class="list-unstyled">
+                              <li><a>Find a Doctor</a></li>
+                              <li><a>Urgent Care</a></li>
+                              <li><a>Estimate Your Cost</a></li>
+                            </ul>
+                        </div>
+                        </div>
+                        <div class="tab-pane " id="tab3default">
+                        <div class="col-xs-12 col-sm-3">
+                            <h3>Support</h3>
+                            <ul class="list-unstyled">
+                              <li><a>Contact Us</a></li>
+                              <li><a>Message Center</a></li>
+                              <li><a>Forms</a></li>
+                              <li><a>FAQs</a></li>
+                              <li><a>Glossary</a></li>
+                            </ul>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+
 <div ng-controller="claimsCtrl">
 	<h3 class="text-center">YOU HAVE {{gridOptions.data.length}} CLAIM(S) IN THE LAST 3 MONTHS</h3>
 	<div class="dt-pick-link">
