@@ -1,16 +1,15 @@
 <div ng-controller="claimsCtrl" class="container-fluid nopadding">
-<div class="section-header col-xs-12 nopadding">
-<div class="panel with-nav-tabs panel-default">
-                <div class="">
-                        <ul class="nav nav-tabs nav-justified">
-                            <li><a data-target="#tab1default" data-toggle="tab">My Plan</a></li>
-                            <li><a data-target="#tab2default" data-toggle="tab">Find Care</a></li>
-                            <li><a data-target="#tab3default" data-toggle="tab">Support</a></li>
+<div class="col-xs-12 nopadding panel with-nav-tabs panel-default">
+                <div class="section-header">
+                        <ul class="nav nav-tabs container">
+                            <li class="col-xs-4"><a data-target="#tab1default" data-toggle="tab">My Plan</a></li>
+                            <li class="col-xs-4"><a data-target="#tab2default" data-toggle="tab">Find Care</a></li>
+                            <li class="col-xs-4"><a data-target="#tab3default" data-toggle="tab">Support</a></li>
                         </ul>
                 </div>
-                <div class="panel-body">
+                <div class="panel-body container">
                     <div class="tab-content">
-                        <div class="tab-pane" id="tab1default">
+                        <div class="tab-pane fade in" id="tab1default">
                           <div class="col-xs-12 col-sm-3">
                             <h3>My Claim</h3>
                             <ul class="list-unstyled">
@@ -27,15 +26,15 @@
                            <div><a>Claims</a></div>
                            <h3>Benefits</h3>
                             <ul class="list-unstyled">
-                              <li><a>Find Benefits</a></li>
-                              <li><a>Plan Information</a></li>
-                              <li><a>Plan Progress</a></li>
-                              <li><a>Service Limits</a></li>
+                              <li><a ui-sref="benefits.find">Find Benefits</a></li>
+                              <li><a ui-sref="benefits.info">Plan Information</a></li>
+                              <li><a ui-sref="benefits.progress">Plan Progress</a></li>
+                              <li><a ui-sref="benefits.service">Service Limits</a></li>
                             </ul>
                           </div>
 
                         </div>
-                        <div class="tab-pane " id="tab2default">
+                        <div class="tab-pane fade" id="tab2default">
                         <div class="col-xs-12 col-sm-3">
                             <h3>Find Care</h3>
                             <ul class="list-unstyled">
@@ -45,7 +44,7 @@
                             </ul>
                         </div>
                         </div>
-                        <div class="tab-pane " id="tab3default">
+                        <div class="tab-pane fade" id="tab3default">
                         <div class="col-xs-12 col-sm-3">
                             <h3>Support</h3>
                             <ul class="list-unstyled">
@@ -98,5 +97,4 @@
 		</div>
 	</div>
     <div ui-grid="gridOptions" ui-grid-expandable class="grid"></div>
-</div>
 </div>
