@@ -18,13 +18,16 @@ angular.module('portalApp')
     $scope.hidden = true;
     if($localStorage.username || $localStorage.username !=""){
       $rootScope.login = $localStorage.username;
-<<<<<<< HEAD
       $rootScope.first_name = $localStorage.fName;
-=======
-      $rootScope.frstName = $localStorage.fName;
->>>>>>> kannan
         $state.go('home',{reload:true});
     }
+
+
+       // $state.go('home',{reload:true});
+    }else
+{
+  $rootScope.login = $localStorage.username;
+}
 
     $scope.onLogin = function(username,password){
         //console.log(username +' '+ password);
@@ -70,6 +73,12 @@ angular.module('portalApp')
       popupWin.document.write('<html><head><link rel="stylesheet" type="text/css" href="style.css" /></head><body onload="window.print()">' + printContents + '</body></html>');
       popupWin.document.close();
     }
+    $scope.openNav = function(){
+      document.getElementById("myNav").style.width = "100%";
+    };
+    $scope.closeNav = function(){
+      document.getElementById("myNav").style.width = "0%";
+    };
   });
 
   /*
@@ -119,3 +128,7 @@ angular.module('portalApp')
         return error.statusText;
       }
     }
+   angular.module('portalApp')
+ .controller('overlayCtrl', function($scope){
+$scope.firstname = "John";
+  });

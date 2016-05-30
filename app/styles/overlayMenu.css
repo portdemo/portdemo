@@ -1,0 +1,56 @@
+.overlayfull {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0, 122, 204);
+    background-color: rgba(0, 122, 204, 0.95);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.overlayfull h3{
+    color: #fff;
+}
+.overlayfull h4{
+    color: #fff;
+    font-size: 16px;
+    font-weight:600;
+}
+
+.overlayfull a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #f1f1f1;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlayfull a:hover, .overlayfull a:focus {
+    color: #818181;
+}
+
+.closebtn {
+    position: absolute;
+    top: 0px;
+    left: 195px;
+    font-size: 45px !important;
+}
+.boldsubs a{
+    padding-left: 0px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+@media screen and (max-height: 450px) {
+  .overlayfull a {font-size: 20px}
+  .closebtn {
+    font-size: 40px !important;
+    top: 15px;
+    right: 35px;
+  }
+}

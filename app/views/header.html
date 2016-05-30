@@ -1,8 +1,12 @@
 <div ng-controller="loginCtrl">
 <nav class="navbar-tabs" role="navigation">
     <div class="navbar-header col-sm-5 col-xs-4 vertical-center">
-      <div class="dropdown">
-        <div class="dropdown-toggle flex h4" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      <!-- <div class="dropdown"> -->
+        <div class="dropdown-toggle flex h4" ng-if="login.length>0">
+          <span class="glyphicon glyphicon-menu-hamburger vertical-center" ng-click="openNav()"></span>
+          <span class="vertical-center">Menu</span>
+        </div>
+        <div class="dropdown-toggle flex h4" ng-if="login.length==0">
           <span class="glyphicon glyphicon-menu-hamburger vertical-center"></span>
           <span class="vertical-center">Menu</span>
         </div>
@@ -14,6 +18,12 @@
         </ul>
         -->
       </div>
+        <!-- <ul class="dropdown-menu" id="dropdownMenu1" aria-labelledby="dropdownMenu1">
+          <li><a id="aboutus" ui-sref="home">About Us</a></li>
+          <li><a id="contactus" ui-sref="home">Contact Us</a></li>
+          <li ng-if="login.length > 0" ng-click="logout();"><a>Logout</a></li>
+        </ul> -->
+     <!--  </div> -->
     </div>
     <div class="navbar-header col-sm-2 col-xs-3 vertical-center">
       <img src="images/accentureLogo.png" width="auto" height="60px;">
@@ -46,6 +56,8 @@
           <a ng-click="logout()">
           <span class="glyphicon glyphicon-user"></span>
           </a>
+          <a ng-click="logout()">
+          <span class="glyphicon glyphicon-user"></span>
         </li>
       </ul>
       <ul class="visible-xs pull-right list-unstyled">
@@ -134,4 +146,5 @@
                 </div>
         </div>
         -->
+    <div ng-include="'views/overlay-menu.html'"></div>
   </nav>
