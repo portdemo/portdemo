@@ -63,8 +63,8 @@ footer {
 .section-content { color:var(--main-theme-color);}
 .section-content .glyphicon { color:var(--main-btn-color);}
 .section-content .icon {font-size:40px;}
-.section-content .activeborder { border-bottom:2px solid var(--main-btn-color); }
-
+.section-content .activeborder { border-bottom:2px solid var(--main-btn-color);}
+.section-content .activeborder div {color: grey;}
 
 .footerParts a {
     color: white;

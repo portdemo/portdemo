@@ -1,0 +1,21 @@
+<div class="service-limit col-md-12">
+	<div class="service-limit-filter col-md-12">
+		<div class="col-md-4">
+			<div>Benefit Period</div>
+			<select class="col-md-11" name="benefitPeriod" ng-model="benefitPeriod" ng-change="getMemberDetails()">
+				<option value="">Select Benefit Period</option>
+				<option ng-repeat="option in benefitPeriods" value="{{option}}">{{option}}</option>
+			</select>
+		</div>
+		<div class="col-md-4">
+			<div>Member</div>
+			<select class="col-md-11" name="benefitMember" ng-model="benefitMember" ng-change="enableApply()" ng-disabled="disableMembers">
+				<option value="">Select Member</option>
+				<option ng-repeat="option in members" value="{{option}}">{{option}}</option>
+			</select>
+		</div>
+		<div class="col-md-2">
+			<button class="btn btn-success" ng-disabled="disableApplyBtn">Apply</button>
+		</div>
+	</div>
+</div>

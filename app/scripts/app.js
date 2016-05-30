@@ -66,8 +66,9 @@ angular
       })
       .state('benefits.service',{
         url: '/service',
-        templateUrl: 'views/benefits.html',
+        templateUrl: 'views/service-limits.html',
         authRequired : 1,
+        controller: 'serviceLimitCtrl'
       });    
 
     $urlRouterProvider.otherwise('/login');
