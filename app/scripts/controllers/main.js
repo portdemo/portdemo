@@ -73,9 +73,11 @@ angular.module('portalApp')
     }
     $scope.openNav = function(){
       document.getElementById("myNav").style.width = "100%";
+      document.body.style.overflow = 'hidden';
     };
     $scope.closeNav = function(){
       document.getElementById("myNav").style.width = "0%";
+      document.body.style.overflow = 'auto';
     };
   });
 
