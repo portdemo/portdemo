@@ -13,6 +13,7 @@
 
 .overlayfull h3{
     color: #fff;
+    font-size: 20px;
 }
 .overlayfull h4{
     color: #fff;
@@ -23,7 +24,7 @@
 .overlayfull a {
     padding: 8px;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 14px;
     color: #f1f1f1;
     display: block;
     transition: 0.3s;
@@ -36,8 +37,11 @@
 .closebtn {
     position: absolute;
     top: 0px;
-    left: 195px;
+    left: 212px;
     font-size: 45px !important;
+}
+.boldsubs h3{
+    font-size: 20px;
 }
 .boldsubs a{
     padding-left: 0px;
