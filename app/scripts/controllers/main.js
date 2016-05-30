@@ -19,8 +19,10 @@ angular.module('portalApp')
     if($localStorage.username || $localStorage.username !=""){
       $rootScope.login = $localStorage.username;
        // $state.go('home',{reload:true});
-    }
-
+    }else
+{
+  $rootScope.login = $localStorage.username;
+}
     $scope.onLogin = function(username,password){
         //console.log(username +' '+ password);
         //console.log('you clicked');
@@ -55,6 +57,13 @@ angular.module('portalApp')
       $localStorage.username = '';
       $rootScope.login = $localStorage.username;
       $state.go('login', {reload: true});
+    };
+
+    $scope.openNav = function(){
+      document.getElementById("myNav").style.width = "100%";
+    };
+    $scope.closeNav = function(){
+      document.getElementById("myNav").style.width = "0%";
     };
   });
 
@@ -105,3 +114,7 @@ angular.module('portalApp')
         return error.statusText;
       }
     }
+   angular.module('portalApp')
+ .controller('overlayCtrl', function($scope){
+$scope.firstname = "John";
+  });
