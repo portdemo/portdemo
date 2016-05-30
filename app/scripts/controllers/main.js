@@ -18,8 +18,7 @@ angular.module('portalApp')
     $scope.hidden = true;
     if($localStorage.username || $localStorage.username !=""){
       $rootScope.login = $localStorage.username;
-      $rootScope.frstName = $localStorage.frstName;
-       $state.go('home',{reload:true});
+        $state.go('home',{reload:true});
     }
 
     $scope.onLogin = function(username,password){
@@ -46,7 +45,6 @@ angular.module('portalApp')
                 $localStorage.lLogin = $scope.users.lastLogin;
                 $localStorage.username = username;
                 $rootScope.login = $localStorage.username;
-                $rootScope.frstName = $localStorage.frstName;
                 $state.go('home',{reload:true});
             }
         }); 
@@ -79,7 +77,6 @@ angular.module('portalApp')
     
     if($localStorage.username != ""){
         $scope.first_name = $localStorage.fName;
-        $localStorage.frstName = $scope.first_name;
         $scope.member_id = $localStorage.mId;
         $scope.plan_name = $localStorage.pName;
         $scope.last_login = $localStorage.lLogin.replace(/ /g,'T');
