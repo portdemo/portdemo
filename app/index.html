@@ -10,6 +10,7 @@
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="bower_components/angular-ui-grid/ui-grid.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -31,9 +32,11 @@
       
     <div class="container">
         <div ng-include="'views/header.html'" class="row nomargin"></div>
-        <div ui-view></div>  
     </div>
-       <div ng-include="'views/footer.html'" class="row nomargin"></div>
+    <div class="container-fluid">
+            <div ui-view></div> 
+    </div>       
+    <div ng-include="'views/footer.html'" class="row nomargin"></div>
   
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js-->
@@ -46,6 +49,9 @@
     <script src="bower_components/angular-ui-validate/dist/validate.js"></script>
     <script src="bower_components/ngstorage/ngStorage.js"></script>
     <script src="bower_components/angular-ui-grid/ui-grid.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="bower_components/angular-daterangepicker/js/angular-daterangepicker.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

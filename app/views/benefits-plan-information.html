@@ -1,0 +1,22 @@
+<form class="novalidate" ng-controller="loginCtrl">
+<label>
+Benefit Period
+<input date-range-picker class="form-control date-picker" type="text" ng-model="date" min="'2014-02-23'" max="'2016-05-25'"/>
+</label>
+<input type="submit" class="btn btn-danger" value="Apply">
+<span class="glyphicon glyphicon-print" ng-click="printDiv('printable-content')"></span>&nbsp;Print
+</form>
+<div>Who's Covered on My Plan</div>
+<div>Change who's shown here in <a>Privacy & Access Settings</a></div>
+<div id="printable-content">
+<div class="col-xs-3">Member</div>
+<div class="col-xs-3">Benefit</div>
+<div class="col-xs-3">Status</div>
+<div class="col-xs-3">Benefit Period</div>
+<div class="clearfix"></div>
+<hr style="color:#000;" />
+<div class="col-xs-3">Steve (1/1/1932)</div>
+<div class="col-xs-3">Medical Pharmacy, Dental Vision</div>
+<div class="col-xs-3">Active</div>
+<div class="col-xs-3">Feb 01,2016 to Present</div>
+</div>

@@ -6,11 +6,13 @@
           <span class="glyphicon glyphicon-menu-hamburger vertical-center"></span>
           <span class="vertical-center">Menu</span>
         </div>
+        <!--
         <ul class="dropdown-menu" id="dropdownMenu1" aria-labelledby="dropdownMenu1">
           <li><a id="aboutus" ui-sref="home">About Us</a></li>
           <li><a id="contactus" ui-sref="home">Contact Us</a></li>
           <li ng-if="login.length > 0" ng-click="logout();"><a>Logout</a></li>
         </ul>
+        -->
       </div>
     </div>
     <div class="navbar-header col-sm-2 col-xs-3 vertical-center">
@@ -70,4 +72,64 @@
       </ul>
     </div>
     <!-- /.navbar-collapse -->
+    <div class="col-xs-12 panel with-nav-tabs panel-default">
+                <div class="section-header">
+                        <ul class="nav nav-tabs nav-justified">
+                            <li><a href="#tab1default" data-toggle="tab">My Plan</a></li>
+                            <li><a href="#tab2default" data-toggle="tab">Find Care</a></li>
+                            <li><a href="#tab3default" data-toggle="tab">Support</a></li>
+                        </ul>
+                </div>
+                <div class="panel-body">
+                    <div class="tab-content">
+                        <div class="tab-pane fade in" id="tab1default">
+                          <div class="col-xs-12 col-sm-3">
+                            <h3>My Claim</h3>
+                            <ul class="list-unstyled">
+                              <li><a>Account Summary</a></li>
+                              <li><a>Pharmacy</a></li>
+                              <li><a>ID Card</a></li>
+                              <li><a>Referalls and authorizations</a></li>
+                              <li><a>Pay my Bill</a></li>
+                              <li><a>Primary care physican</a></li>
+                            </ul>
+                          </div>
+                          <div class="col-xs-12 col-sm-4">
+                           <h3>Claims</h3>
+                           <div><a>Claims</a></div>
+                           <h3>Benefits</h3>
+                            <ul class="list-unstyled">
+                              <li><a>Find Benefits</a></li>
+                              <li><a>Plan Information</a></li>
+                              <li><a>Plan Progress</a></li>
+                              <li><a>Service Limits</a></li>
+                            </ul>
+                          </div>
+
+                        </div>
+                        <div class="tab-pane fade" id="tab2default">
+                        <div class="col-xs-12 col-sm-3">
+                            <h3>Find Care</h3>
+                            <ul class="list-unstyled">
+                              <li><a>Find a Doctor</a></li>
+                              <li><a>Urgent Care</a></li>
+                              <li><a>Estimate Your Cost</a></li>
+                            </ul>
+                        </div>
+                        </div>
+                        <div class="tab-pane fade" id="tab3default">
+                        <div class="col-xs-12 col-sm-3">
+                            <h3>Support</h3>
+                            <ul class="list-unstyled">
+                              <li><a>Contact Us</a></li>
+                              <li><a>Message Center</a></li>
+                              <li><a>Forms</a></li>
+                              <li><a>FAQs</a></li>
+                              <li><a>Glossary</a></li>
+                            </ul>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
   </nav>

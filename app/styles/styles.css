@@ -33,19 +33,24 @@ footer {
         padding: 15px 0;
     }*/
 }
+:root {
+  --main-theme-color: #00609A;
+  --main-font-family: "Calibri", sans-serif;
+  --main-btn-color: #ea6262;
+}
 /* For header changes */
-.navbar-header { color:#00609A;  padding-top:15px;padding-bottom: 10px; }
+.navbar-header { color:var(--main-theme-color);  padding-top:15px;padding-bottom: 10px; }
 .navbar-nav > li > a{ color:white !important; }
 .nav > li > a:hover, .nav > li > a:focus { background: none !important; }
-.navbar-collapse ul.navlinks-right li { background: #00609A; margin: 5px; border-radius: 50%; }
-.dropdown-toggle.flex.h4 {color:#00609A;}
+.navbar-collapse ul.navlinks-right li { background: var(--main-theme-color); margin: 5px; border-radius: 50%; }
+.dropdown-toggle.flex.h4 {color:var(--main-theme-color);}
 .flex{display:flex;}
 .vertical-center{align-self: center;}
 .navbar-collapse > ul{font-size: 20px; padding-top:12px; padding-bottom: 10px;}
 .nopadding{padding:0px;}
 .nomargin{margin:0px;}
 .glyphicon.glyphicon-menu-hamburger.vertical-center{font-size:35px;}
-.glyphicon.glyphicon-menu-hamburger.vertical-center.hamburger {color:#00609A;}
+.glyphicon.glyphicon-menu-hamburger.vertical-center.hamburger {color:var(--main-theme-color);}
 .banner .overlay{position: absolute;top: 0px;left: 12px;width: 98%;height: 100%;color: white;background: rgba(0, 0, 0, .2);}
 .banner .overlay .banner_content{position:relative; top:130px;display: inline-block; margin:auto !important;}
 .banner .overlay h2{font-family: 'Open Sans', sans-serif;}
@@ -54,6 +59,12 @@ footer {
 .footerParts a {color: white;}
 .default{opacity: 1; color:red;}
 .fade{-webkit-transition: opacity 10s; transition: opacity 10s; opacity: 0;}
+.section-header{background:var(--main-theme-color);color:white;font-size:25px;font-family: var(--main-font-family);}
+.section-content { color:var(--main-theme-color);}
+.section-content .glyphicon { color:var(--main-btn-color);}
+.section-content .icon {font-size:40px;}
+.section-content .activeborder { border-bottom:2px solid var(--main-btn-color); }
+
 
 .footerParts a {
     color: white;

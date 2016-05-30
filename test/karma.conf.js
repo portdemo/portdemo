@@ -29,6 +29,9 @@ module.exports = function(config) {
       'bower_components/angular-ui-validate/dist/validate.js',
       'bower_components/ngstorage/ngStorage.js',
       'bower_components/angular-ui-grid/ui-grid.js',
+      'bower_components/moment/moment.js',
+      'bower_components/bootstrap-daterangepicker/daterangepicker.js',
+      'bower_components/angular-daterangepicker/js/angular-daterangepicker.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

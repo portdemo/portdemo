@@ -16,7 +16,8 @@ angular
     'ui.validate',
     'ngStorage',
     'ui.grid',
-    'ui.grid.expandable'
+    'ui.grid.expandable',
+    'daterangepicker'
   ]).config(function($stateProvider, $urlRouterProvider,$httpProvider) {
     $stateProvider
       .state('login', {
@@ -42,7 +43,32 @@ angular
         templateUrl: 'views/register.html',
         authRequired : 0,
         controller: 'registerCtrl'
-      });   
+      })
+      .state('benefits',{
+        url: '/benefits',
+        templateUrl: 'views/benefits.html',
+        authRequired : 1,
+      })
+      .state('benefits.find',{
+        url: '/find',
+        templateUrl: 'views/benefits-find-benefits.html',
+        authRequired : 1,
+      })
+      .state('benefits.info',{
+        url: '/info',
+        templateUrl: 'views/benefits-plan-information.html',
+        authRequired : 1,
+      })
+      .state('benefits.progress',{
+        url: '/progress',
+        templateUrl: 'views/benefits.html',
+        authRequired : 1,
+      })
+      .state('benefits.service',{
+        url: '/service',
+        templateUrl: 'views/benefits.html',
+        authRequired : 1,
+      });    
 
     $urlRouterProvider.otherwise('/login');
 
