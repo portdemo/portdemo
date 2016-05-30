@@ -1,6 +1,7 @@
-<div ng-controller="claimsCtrl" class="container">
-<div class="col-xs-12 panel with-nav-tabs panel-default">
-                <div class="section-header">
+<div ng-controller="claimsCtrl" class="container-fluid nopadding">
+<div class="section-header col-xs-12 nopadding">
+<div class="panel with-nav-tabs panel-default">
+                <div class="">
                         <ul class="nav nav-tabs nav-justified">
                             <li><a data-target="#tab1default" data-toggle="tab">My Plan</a></li>
                             <li><a data-target="#tab2default" data-toggle="tab">Find Care</a></li>
@@ -60,7 +61,7 @@
                 </div>
         </div>
 </div>
-<div ng-controller="claimsCtrl">
+<div  class="container">
 	<h3 class="text-center">YOU HAVE {{gridOptions.data.length}} CLAIM(S) IN THE LAST 3 MONTHS</h3>
 	<div class="dt-pick-link">
 		<div class="col-md-7 text-right">
@@ -97,4 +98,5 @@
 		</div>
 	</div>
     <div ui-grid="gridOptions" ui-grid-expandable class="grid"></div>
+</div>
 </div>
