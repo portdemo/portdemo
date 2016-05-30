@@ -18,6 +18,7 @@ angular.module('portalApp')
     $scope.hidden = true;
     if($localStorage.username || $localStorage.username !=""){
       $rootScope.login = $localStorage.username;
+      $rootScope.frstName = $localStorage.fName;
         $state.go('home',{reload:true});
     }
 
