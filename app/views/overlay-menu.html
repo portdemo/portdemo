@@ -1,5 +1,5 @@
 <div id="myNav" class="overlayfull" ng-controller="loginCtrl">
-    <div class="container">
+    <div class="container" ng-controller="menudynamicCtrl">
     <br><br><br>
     <a href="javascript:void(0)" class="closebtn" ng-click="closeNav()">×</a>
         <div class="col-md-1">&nbsp;</div>
@@ -7,46 +7,31 @@
           <h3>My Plan</h3><br>
            <h4>My Plan</h4>
             <div style="padding-left:10px;">
-            <a href="#">Account Summary</a>
-            <a href="#">Pharmacy</a>
-            <a href="#">ID Card</a>
-            <a href="#">Referrals and Authorizations</a>
-            <a href="#">Pay My Bill</a>
-            <a href="#">Primary Care Physician</a>
+            <a ng-repeat="myplan in menus.myplans" href="#">{{myplan.name}}</a>
             </div>
             
             <h4>Claims</h4>
             <div style="padding-left:10px;">
-            <a href="#">Claims</a>
+            <a ng-repeat="claim in menus.claims" href="#">{{claim.name}}</a>
             </div>
             
             <h4>Benefits</h4>
             <div style="padding-left:10px; padding-bottom: 20px;">
-            <a href="#">Find Benefits</a>
-            <a href="#">Plan Information</a>
-            <a href="#">Plan Progress</a>
-            <a href="#">Service Limits</a>
+            <a ng-repeat="benefit in menus.benefits" href="#">{{benefit.name}}</a>
             </div>
         </div>
         <span class="col-md-1 hidden-xs" style="border-left:0.5px solid #fff;height:550px"></span>
         <div class="col-md-3">
           <h3>Find Care</h3><br>
           <div class="boldsubs">
-          <a href="#">Find a Doctor</a>
-          <a href="#">Urgent Care</a>
-          <a href="#">Estimate Your Cost</a>
+            <a ng-repeat="findcare in menus.findcares" href="#">{{findcare.name}}</a>
           </div>
         </div>
         <span class="col-md-1 hidden-xs" style="border-left:0.5px solid #fff;height:550px"></span>
         <div class="col-md-3">
           <h3>Support</h3><br>
           <div class="boldsubs">
-          <a href="#">Contact Us</a>
-          <a href="#">Message Center</a>
-          <a href="#">Forms</a>
-          <a href="#">FAQs</a>
-          <a href="#">Glossary</a>
-          <a href="#">Learning Center</a>
+          <a ng-repeat="supmenu in menus.supmenus" href="#">{{supmenu.name}}</a>
           </div>
         </div>
     </div>

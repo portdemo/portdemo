@@ -1,0 +1,78 @@
+{
+  "myplans":
+  [
+    {
+      "name": "Account Summary"
+    },
+    {
+      "name": "Pharmacy"
+    },
+    {
+      "name": "ID Card"
+    },
+    {
+      "name": "Referrals and Authorizations"
+    },
+    {
+      "name": "Pay My Bill"
+    },
+    {
+      "name": "Primary Care Physician"
+    }
+  ],
+  "claims":
+  [
+    {
+      "name": "Claims"
+    }
+  ],
+  "benefits":
+  [
+    {
+      "name": "Find Benefits"
+    },
+    {
+      "name": "Plan Information"
+    },
+    {
+      "name": "Plan Progress"
+    },
+    {
+      "name": "Service Limits"
+    }
+  ],
+  "findcares":
+  [
+    {
+      "name": "Find a Doctor"
+    },
+    {
+      "name": "Urgent Care"
+    },
+    {
+      "name": "Estimate Your Cost"
+    }
+  ],
+  "supmenus":
+  [
+    {
+      "name": "Contact Us"
+    },
+    {
+      "name": "Message Center"
+    },
+    {
+      "name": "Forms"
+    },
+    {
+      "name": "FAQs"
+    },
+    {
+      "name": "Glossary"
+    },
+    {
+      "name": "Learning Center"
+    }
+  ]
+
+}

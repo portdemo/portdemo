@@ -128,7 +128,11 @@ angular.module('portalApp')
         return error.statusText;
       }
     }
-   angular.module('portalApp')
- .controller('overlayCtrl', function($scope){
-$scope.firstname = "John";
+
+
+angular.module('portalApp')
+.controller('menudynamicCtrl',['$scope','$http', function(scope,http){
+  http.get('data/menus.json').success(function(data){
+    scope.menus=data;
   });
+}]);
