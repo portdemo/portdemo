@@ -1,24 +1,8 @@
-<style>
-:root {
-  --main-theme-color: #00609A;
-  --main-font-family: "Calibri", sans-serif;
-  --main-btn-color: #ea6262;
-}
-.section-content { color:var(--main-theme-color);} 
 
-.nav.nav-tabs.nav-justified {
-    background-color: #00609A;
-}
-.nav-tabs.nav-justified > li.active:hover, .nav-tabs > li.focus:hover {
-    background-color: white;
-}
-.nav-tabs.nav-justified > li.active a {
-    border-radius: 0;
-}
+<div class="col-xs-12 panel with-nav-tabs">
 
-</style>
-<div class="col-xs-12 panel with-nav-tabs panel-default">
-                <div class="section-header">
+<!-- <div class="col-xs-12 panel with-nav-tabs panel-default">
+ -->                <div class="section-header">
                         <ul class="nav nav-tabs nav-justified">
                             <li><a data-target="#tab1default" data-toggle="tab">My Plan</a></li>
                             <li><a data-target="#tab2default" data-toggle="tab">Find Care</a></li>
@@ -77,9 +61,10 @@
                     </div>
                 </div>
         </div>
-
+</div>
 
 <div ng-controller="claimsCtrl">
+
 	<h3 class="text-center">YOU HAVE {{gridOptions.data.length}} CLAIM(S) IN THE LAST 3 MONTHS</h3>
 	<div class="dt-pick-link">
 		<div class="col-md-7 text-right">
