@@ -1,0 +1,16 @@
+:root {
+  --main-theme-color: #00609A;
+  --main-font-family: "Calibri", sans-serif;
+  --main-btn-color: #ea6262;
+}
+.section-content { color:var(--main-theme-color);} 
+
+.nav.nav-tabs.nav-justified {
+    background-color: #00609A;
+}
+.nav-tabs.nav-justified > li.active:hover, .nav-tabs > li.focus:hover {
+    background-color: white;
+}
+.nav-tabs.nav-justified > li.active a {
+    border-radius: 0;
+}
