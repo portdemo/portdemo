@@ -39,6 +39,14 @@ app.controller('serviceLimitCtrl', ['$scope', '$state', 'serviceLimitService', '
 		});
 	};
 
+	$scope.getServiceLimitData = function() {
+		serviceLimitService.getServiceLimitData($scope.benefitPeriod, $scope.benefitMember).then(function(data){
+			$scope.serviceLimitData = data;
+		}).catch(function(error){
+			console.log(error);
+		});
+	};
+
 	$scope.enableApply = function() {
 		$scope.disableApplyBtn = false;
 	};
@@ -57,6 +65,16 @@ app.factory("serviceLimitService", function($http) {
 
 		getBenefitPeriods: function() {
 			return $http.get('http://10.236.91.188:8080/ClaimsPortal/benefitPeriod')
+				.then(function(data) {
+					return data.data;
+				}).catch(function(error){
+					return error;
+				});
+		},
+
+		getServiceLimitData: function(benefitPeriod, benefitMember) {
+			var postData = {"BenefitPeriod":benefitPeriod,"Member":benefitMember}
+			return $http.post('http://10.236.91.188:8080/ClaimsPortal/serviceLimits', postData)
 				.then(function(data) {
 					return data.data;
 				}).catch(function(error){
