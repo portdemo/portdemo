@@ -16,7 +16,7 @@ angular.module('portalApp')
         alert('yes stored');
     }*/
     $scope.hidden = true;
-    if($localStorage.username || $localStorage.username !=""){
+    if($localStorage.username || $localStorage.username !== ""){
       $rootScope.login = $localStorage.username;
       $rootScope.first_name = $localStorage.fName;
         $state.go('home',{reload:true});
@@ -32,7 +32,7 @@ angular.module('portalApp')
         //console.log('you clicked');
         $scope.logindata = {};
         $scope.logindata.userName = username;
-        $scope.logindata.password = password
+        $scope.logindata.password = password;
         loginService.getUser(angular.toJson($scope.logindata)).then(function(data) {
             $scope.users = data;
             if(JSON.stringify($scope.users) === '{}'){
@@ -57,7 +57,7 @@ angular.module('portalApp')
         }); 
         
         //$state.go('home');
-    }
+    };
     $scope.logout = function(){
       $localStorage.username = '';
       $rootScope.login = $localStorage.username;
@@ -70,7 +70,7 @@ angular.module('portalApp')
       popupWin.document.open();
       popupWin.document.write('<html><head><link rel="stylesheet" type="text/css" href="style.css" /></head><body onload="window.print()">' + printContents + '</body></html>');
       popupWin.document.close();
-    }
+    };
     $scope.openNav = function(){
       document.getElementById("myNav").style.width = "100%";
       document.body.style.overflow = 'hidden';
@@ -86,28 +86,25 @@ angular.module('portalApp')
    */
 angular.module('portalApp')
  .controller('bannerCtrl', function($scope, $state, $localStorage, loginService){
-     if(!$localStorage.username || $localStorage.username == ""){
+     if(!$localStorage.username || $localStorage.username === ""){
          $state.go('login');
      }
     
-    if($localStorage.username != ""){
+    if($localStorage.username !== ""){
         $scope.first_name = $localStorage.fName;
         $scope.member_id = $localStorage.mId;
         $scope.plan_name = $localStorage.pName;
         $scope.last_login = $localStorage.lLogin.replace(/ /g,'T');
         $scope.newDate = new Date($scope.last_login);
     }
-})
+});
 
 
 /*
 *Created a Factory for login and banner to show data
 *
 */
-angular.module('portalApp')
-    .factory('loginService', loginFactory);
-
-    function loginFactory($http) {
+function loginFactory($http) {
       this.$inject = ['$http'];
       return {
         getUser: getUser
@@ -128,7 +125,6 @@ angular.module('portalApp')
         return error.statusText;
       }
     }
-   angular.module('portalApp')
- .controller('overlayCtrl', function($scope){
-$scope.firstname = "John";
-  });
+    
+angular.module('portalApp')
+    .factory('loginService', loginFactory);

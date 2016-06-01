@@ -53,6 +53,7 @@ angular
         url: '/find',
         templateUrl: 'views/benefits-find-benefits.html',
         authRequired : 1,
+        controller: 'benefitsCtrl'
       })
       .state('benefits.info',{
         url: '/info',
