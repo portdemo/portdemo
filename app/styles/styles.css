@@ -61,14 +61,20 @@ footer {
 .fade{-webkit-transition: opacity 10s; transition: opacity 10s; opacity: 0;}
 .section-header{background:var(--main-theme-color);color:white;font-size:25px;font-family: var(--main-font-family);}
 .section-content { color:var(--main-theme-color);}
-.section-content .glyphicon { color:var(--main-btn-color);}
+.glyphicon.icon { color:var(--main-btn-color);}
 .section-content .icon {font-size:40px;}
 .section-content .activeborder { border-bottom:2px solid var(--main-btn-color);}
 .section-content .activeborder div {color: grey;}
-
+.section-content .activeborder { border:1px solid skyblue;border-bottom:2px solid var(--main-btn-color); }
+.benefit-period { padding: 7px; margin: 0 5% 0 0; }
+.margin-right5 { margin: 0 5% 0 0; }
+.nobg { background : none; }
 .footerParts a {
     color: white;
 }
+.margin5{margin : 5px;}
+.padding10{padding:10px;}
+#printable-content{border-bottom:1px solid lightgray;}
 .expandedRow {
     margin: 15px 0;
 }
