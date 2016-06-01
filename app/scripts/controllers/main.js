@@ -19,7 +19,7 @@ angular.module('portalApp')
     if($localStorage.username || $localStorage.username !== ""){
       $rootScope.login = $localStorage.username;
       $rootScope.first_name = $localStorage.fName;
-        $state.go('home',{reload:true});
+      $state.go('home',{reload:true});
     }
        // $state.go('home',{reload:true});
   else
