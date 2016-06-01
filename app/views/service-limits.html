@@ -1,21 +1,44 @@
 <div class="service-limit col-md-12">
 	<div class="service-limit-filter col-md-12">
-		<div class="col-md-4">
-			<div>Benefit Period</div>
-			<select class="col-md-11" name="benefitPeriod" ng-model="benefitPeriod" ng-change="getMemberDetails()">
+		<div class="col-md-4 form-group">
+			<label>Benefit Period</label>
+			<select class="col-md-11 form-control" name="benefitPeriod" ng-model="benefitPeriod" ng-change="getMemberDetails()">
 				<option value="">Select Benefit Period</option>
 				<option ng-repeat="option in benefitPeriods" value="{{option}}">{{option}}</option>
 			</select>
 		</div>
-		<div class="col-md-4">
-			<div>Member</div>
-			<select class="col-md-11" name="benefitMember" ng-model="benefitMember" ng-change="enableApply()" ng-disabled="disableMembers">
+		<div class="col-md-4 form-group">
+			<label>Member</label>
+			<select class="col-md-11 form-control" name="benefitMember" ng-model="benefitMember" ng-change="enableApply()" ng-disabled="disableMembers">
 				<option value="">Select Member</option>
 				<option ng-repeat="option in members" value="{{option}}">{{option}}</option>
 			</select>
 		</div>
-		<div class="col-md-2">
-			<button class="btn btn-success" ng-disabled="disableApplyBtn">Apply</button>
+		<div class="col-md-2 form-group">
+			<button class="btn btn-primary service-limit-apply" ng-disabled="disableApplyBtn" ng-click="getServiceLimitData()">Apply</button>
+		</div>
+	</div>
+	<div class="service-limit-labels col-md-12">
+		<div class="col-md-12">
+			<h4>Service Limits In Your Plan</h4>
+			<span>Your plan covers these health services. but only so many times in a year. If you go over that amount, you'll need to cover the cost.</span>
+		</div>
+		<div class="checkbox col-md-12">
+			<label><input type="checkbox" value="">Show only items you have started using.</label>
+		</div>
+	</div>
+	<div class="service-limit-table col-md-12">
+		<div class="col-md-12 service-limit-table-header row">
+			<div class="col-md-4">Item</div><div class="col-md-3">Limit</div><div class="col-md-2">Used</div>
+			<div class="col-md-3">Remaining</div>
+		</div>
+		<div>
+			<div class="service-limit-table-content row col-md-12" ng-repeat="service in serviceLimitData">
+				<div class="col-md-4">{{service.item}}</div>
+				<div class="col-md-3">{{service.limit}}</div>
+				<div class="col-md-2">{{service.used}}</div>
+				<div class="col-md-3">{{service.remaining}}</div>
+			</div>
 		</div>
 	</div>
 </div>

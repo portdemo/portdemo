@@ -1,0 +1,16 @@
+.service-limit-filter, .service-limit-labels, .service-limit-table {
+	color: black;
+}
+.service-limit-apply {
+	margin-top: 25px;
+}
+.service-limit-table-header {
+	padding: 5px 10px;
+    border-bottom: 1px solid gray;
+    margin: 2px 15px;
+}
+.service-limit-table-content {
+   	padding: 10px;
+	border-bottom: 1px solid gray;
+	margin: 2px 15px;
+}
