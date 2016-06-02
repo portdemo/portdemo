@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for scripts\controllers\claimsCtrl.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">scripts/controllers/</a> claimsCtrl.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">34.29% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>24/70</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">5.26% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/19</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">34.29% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>24/70</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+var app = angular.module('portalApp');
+&nbsp;
+app.controller('claimsCtrl', ['$scope', '$http', '$filter', function($scope, $http, $filter){
+	var gridData = [];
+	$scope.isDatePicker = false;
+	$scope.gridOptions = {
+	    expandableRowTemplate: '../views/claimsdetails.html',
+	    expandableRowHeight: 250
+	};
+&nbsp;
+	$scope.gridOptions.columnDefs = [
+		{ name: 'serviceDate', type: 'date', cellFilter: 'dateFormat'},
+		{ name: 'patient'},
+		{ name: 'provider'},
+		{ name: 'totalBilled', cellFilter: 'currency'},
+		//{ name: 'status'}
+		{ name: 'status', cellTemplate: '&lt;div&gt;&lt;i class="glyphicon" ng-class="{\'glyphicon-ban-circle\' : row.entity.status === \'Denied\', \'glyphicon-exclamation-sign\' : row.entity.status === \'Pending\', \'glyphicon-ok-sign\' : row.entity.status === \'Processed\' }"&gt;&lt;/i&gt;{{row.entity.status}}&lt;/div&gt;'}
+&nbsp;
+	];
+&nbsp;
+<span class="fstat-no" title="function not covered" >	function getStatusClass(row) {</span>
+<span class="cstat-no" title="statement not covered" >		var statusClass = "glyphicon-ok-sign";</span>
+<span class="cstat-no" title="statement not covered" >		if (row.entity.status === "Denied") {</span>
+<span class="cstat-no" title="statement not covered" >			statusClass = "glyphicon-ban-circle";</span>
+		} else <span class="cstat-no" title="statement not covered" >if (row.entity.status === "Pending") {</span>
+<span class="cstat-no" title="statement not covered" >			statusClass = "glyphicon-exclamation-sign";</span>
+		}
+<span class="cstat-no" title="statement not covered" >		return statusClass;</span>
+	}
+&nbsp;
+	$http.get('http://10.236.91.188:8080/ClaimsPortal/claims.json')
+	    .success(<span class="fstat-no" title="function not covered" >function(data) {</span>
+<span class="cstat-no" title="statement not covered" >	    	gridData = data;</span>
+<span class="cstat-no" title="statement not covered" >	        $scope.gridOptions.data = data;</span>
+	    }).error(<span class="fstat-no" title="function not covered" >function(error){</span>
+<span class="cstat-no" title="statement not covered" >			alert("There is the problem in the conectivity");</span>
+		});
+&nbsp;
+    /******* Start of Datepicker *******/
+&nbsp;
+	$scope.dtFrom = '';
+	$scope.dtTo = '';
+	$scope.popups = {};
+&nbsp;
+	$scope.open1 = <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >		$scope.popups.opened1 = !$scope.popups.opened1;</span>
+<span class="cstat-no" title="statement not covered" >		$scope.popups.opened2 = $scope.popups.opened2 ? false : $scope.popups.opened2;</span>
+	};
+&nbsp;
+	$scope.open2 = <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >		$scope.popups.opened2 = !$scope.popups.opened2;</span>
+<span class="cstat-no" title="statement not covered" >		$scope.popups.opened1 = $scope.popups.opened1 ? false : $scope.popups.opened1;</span>
+	};
+&nbsp;
+	$scope.dateOptions1 = {
+		maxDate: new Date()
+	};
+&nbsp;
+	// Disable weekend selection
+<span class="fstat-no" title="function not covered" >	function disabled(data) {</span>
+<span class="cstat-no" title="statement not covered" >		var date = data.date,</span>
+		mode = data.mode;
+<span class="cstat-no" title="statement not covered" >		return mode === 'day' &amp;&amp; (date &lt; $scope.dtFrom);</span>
+	}
+&nbsp;
+	$scope.dateOptions2 = {
+		dateDisabled: disabled,
+		maxDate: new Date()
+	};
+&nbsp;
+	$scope.format = 'dd-MMMM-yyyy';
+&nbsp;
+<span class="fstat-no" title="function not covered" >	function filterData() {</span>
+<span class="cstat-no" title="statement not covered" >		var $dtToepoch = 0, $dtFromEpoch = 0, filterData = gridData;</span>
+<span class="cstat-no" title="statement not covered" >		if ($scope.dtFrom !== '') {</span>
+<span class="cstat-no" title="statement not covered" >			$scope.dtFrom.setUTCHours(0,0,0,0);</span>
+<span class="cstat-no" title="statement not covered" >			$scope.dtTo.setUTCHours(0,0,0,0);</span>
+<span class="cstat-no" title="statement not covered" >			$dtToepoch = Date.parse($scope.dtTo);</span>
+<span class="cstat-no" title="statement not covered" >			$dtFromEpoch = Date.parse($scope.dtFrom);</span>
+<span class="cstat-no" title="statement not covered" >			filterData = $filter('dateRangeFilter')(gridData, $dtFromEpoch, $dtToepoch);</span>
+		}
+<span class="cstat-no" title="statement not covered" >		$scope.gridOptions.data = $filter('filter')(filterData, $scope.searchText);</span>
+	}
+&nbsp;
+	/*$scope.$watch('dtTo', function(newVal, oldVal) {
+		filterData();
+	});*/
+&nbsp;
+	$scope.refreshData = <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >		filterData();</span>
+	};
+&nbsp;
+	$scope.filterDateRange = <span class="fstat-no" title="function not covered" >function(){</span>
+<span class="cstat-no" title="statement not covered" >		filterData();</span>
+		/*$scope.gridOptions.data = $filter('filter')(gridData, '', undefined);
+		$scope.dtFrom = $scope.dtTo = '';*/
+	};
+&nbsp;
+	$scope.clearDateRange = <span class="fstat-no" title="function not covered" >function(){</span>
+<span class="cstat-no" title="statement not covered" >		$scope.dtFrom = $scope.dtTo = '';</span>
+<span class="cstat-no" title="statement not covered" >		filterData();</span>
+	};
+&nbsp;
+	/******* End of Datepicker *******/
+}]);
+&nbsp;
+app.controller('claimsDashboardCtrl', ['$scope', '$http', <span class="fstat-no" title="function not covered" >function($scope, $http){</span>
+<span class="cstat-no" title="statement not covered" >	$http.get('http://10.236.91.188:8080/ClaimsPortal/claims.json')</span>
+		.success(<span class="fstat-no" title="function not covered" >function(data) {</span>
+<span class="cstat-no" title="statement not covered" >			if(data !== ''){</span>
+<span class="cstat-no" title="statement not covered" >				$scope.claimsData = data;</span>
+<span class="cstat-no" title="statement not covered" >				$scope.show = false;</span>
+			}
+			else{
+<span class="cstat-no" title="statement not covered" >				$scope.errorMessage="No claims data for the current user";</span>
+<span class="cstat-no" title="statement not covered" >				$scope.show = true;</span>
+			}
+		}).error(<span class="fstat-no" title="function not covered" >function(error){</span>
+<span class="cstat-no" title="statement not covered" >			$scope.errorMessage="There is a problem in the data base conectivity";</span>
+<span class="cstat-no" title="statement not covered" >			$scope.show = true;</span>
+		});
+}]);
+&nbsp;
+app.filter("dateFormat", <span class="fstat-no" title="function not covered" >function($filter){</span>
+<span class="cstat-no" title="statement not covered" >	return <span class="fstat-no" title="function not covered" >function(x) {</span></span>
+<span class="cstat-no" title="statement not covered" >		x = x.replace(/\s.*/, '').split('-');</span>
+<span class="cstat-no" title="statement not covered" >		return x[2]+'/'+x[1]+'/'+x[0];</span>
+    };
+});
+&nbsp;
+&nbsp;
+app.filter("dateRangeFilter", <span class="fstat-no" title="function not covered" >function(){</span>
+<span class="cstat-no" title="statement not covered" >	return <span class="fstat-no" title="function not covered" >function(tableData, fromDate, toDate) {</span></span>
+<span class="cstat-no" title="statement not covered" >		var filterData = tableData.filter(<span class="fstat-no" title="function not covered" >function(rowData) {</span></span>
+<span class="cstat-no" title="statement not covered" >			var y = rowData.serviceDate;</span>
+<span class="cstat-no" title="statement not covered" >			y = y.replace(/\s.*/, '');</span>
+<span class="cstat-no" title="statement not covered" >			var serviceDate = Date.parse(y);</span>
+<span class="cstat-no" title="statement not covered" >			if(serviceDate &gt;= fromDate &amp;&amp;  serviceDate &lt;= toDate) {</span>
+<span class="cstat-no" title="statement not covered" >				return rowData;</span>
+			}
+		});
+<span class="cstat-no" title="statement not covered" >		return filterData;</span>
+    };
+});</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu May 19 2016 18:07:08 GMT+0530 (India Standard Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

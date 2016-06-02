@@ -1,0 +1,83 @@
+<style>
+
+
+.anthemAlert i {
+	color: #337ab7;
+    border: 0px  ;
+}
+</style>
+<div ng-controller="benefitCtrl" class="col-md-12">
+
+<form class="novalidate" ng-submit="filterPlan(perioddate)">
+<div class="col-md-12 " >
+<h4>Benefit Period</h4>
+    </div>
+<!--
+
+<input date-range-picker class="form-control date-picker" type="text" ng-model="date" min="'2014-02-23'" max="'2016-05-25'"/>
+
+-->
+<div class="col-md-3">
+<select ng-model="perioddate" ng-options="option as option for option in options"  class="form-control"  >
+
+<option value="">Select Period</option>
+
+</select>
+
+ </div>
+<input type="submit" class="btn btn-danger" value="Apply" >
+
+
+</form>
+<br>
+<div  ng-if="planinformation.member">
+		<div class="col-xs-3 padding10"><b>Member</b></div>
+		<div class="col-xs-3 padding10"><b>Benefit</b></div>
+		<div class="col-xs-3 padding10"><b>Status</b></div>
+		<div class="col-xs-3 padding10"><b>Benefit Period</b></div>
+		<div class="clearfix"></div>
+			<div class="col-xs-3 padding10">{{planinformation.member}}</div>
+			<div class="col-xs-3 padding10">{{planinformation.benefits}}</div>
+			<div class="col-xs-3 padding10">{{planinformation.status}}</div>
+			<div class="col-xs-3 padding10">{{planinformation.benefitPeriod}}</div>
+
+	</div>
+    
+    <div  ng-if="!planinformation.member">
+         <br>
+    <div class="col-md-9">
+       <div class = "panel panel-default" style="border: 1px solid #FF0000;">
+           <div class = "panel-body">
+               
+               <span>
+                <li class="glyphicon glyphicon-exclamation-sign text-danger"></li>&nbsp;Sorry, we can't get your network information right now. please try again later or <a href=""  style="text-decoration: underline;">contactus</a> for help.
+               </span>
+           </div>
+        </div> <br>
+       <!-- <button type="button" class="btn btn-danger" ng-if="planinformation.member" >Apply</button>-->
+      </div>   <div class="clearfix"></div>  <br>
+            <div class="col-md-9  ">
+       <div class="" >
+          
+    <i class="glyphicon glyphicon-info-sign"></i>
+           
+           <span style="padding-left:5px;">
+               This is the most current information available based on claims received. Benefits are subject to the terms,<br>
+limitations and exclusions in your plan.</span>
+         </div>
+         <br>
+         <div class = "panel panel-default" style="border: 1px solid #FF0000;">
+           <div class = "panel-body">
+              
+               
+               <span>
+                <li class="glyphicon glyphicon-exclamation-sign text-danger"></li>&nbsp;We're having a problem getting your out-of-pocket limits. Please try again later or <a href=""  style="text-decoration: underline;">contactus</a> for help.
+               </span>
+           </div>
+        </div>
+        
+      </div>
+        
+    </div> 
+
+</div>

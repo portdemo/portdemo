@@ -1,13 +1,16 @@
 angular.module('portalApp')
  .controller('benefitCtrl', function($scope, benefitFactory){
  	$scope.options = [], $scope.planinformation = [];
+    
  	benefitFactory.getPlanperiod().then(function(data) {
  			$scope.options = data;
+         $scope.options.push('Jan 01, 2016 to Present');
  	});
 
  	$scope.filterPlan = function(perioddate){
  		benefitFactory.getPlanInformation(perioddate).then(function(data) {
  			$scope.planinformation = data;
+           
  		});
  	}
 

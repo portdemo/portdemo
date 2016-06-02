@@ -62,7 +62,7 @@ angular
       })
       .state('benefits.progress',{
         url: '/progress',
-        templateUrl: 'views/benefits.html',
+        templateUrl: 'views/benefits-plan-progress.html',
         authRequired : 1,
       })
       .state('benefits.service',{
