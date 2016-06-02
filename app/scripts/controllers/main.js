@@ -128,3 +128,11 @@ function loginFactory($http) {
     
 angular.module('portalApp')
     .factory('loginService', loginFactory);
+
+
+angular.module('portalApp')
+.controller('menudynamicCtrl',['$scope','$http', function(scope,http){
+  http.get('data/menus.json').success(function(data){
+    scope.menus=data;
+  });
+}]);
