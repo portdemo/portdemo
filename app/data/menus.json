@@ -29,16 +29,20 @@
   "benefits":
   [
     {
-      "name": "Find Benefits"
+      "name": "Find Benefits",
+      "url" : "benefits.find"
     },
     {
-      "name": "Plan Information"
+      "name": "Plan Information",
+      "url" :  "benefits.info"
     },
     {
-      "name": "Plan Progress"
+      "name": "Plan Progress",
+      "url" :  "benefits.progress"
     },
     {
-      "name": "Service Limits"
+      "name": "Service Limits",
+      "url" :  "benefits.service"
     }
   ],
   "findcares":

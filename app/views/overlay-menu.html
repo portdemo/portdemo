@@ -7,31 +7,31 @@
           <h3>My Plan</h3><br>
            <h4>My Plan</h4>
             <div style="padding-left:10px;">
-            <a ng-repeat="myplan in menus.myplans" href="#">{{myplan.name}}</a>
+            <a ng-repeat="myplan in menus.myplans" href="#" ng-click="closeNav()">{{myplan.name}}</a>
             </div>
             
             <h4>Claims</h4>
             <div style="padding-left:10px;">
-            <a ng-repeat="claim in menus.claims" href="#">{{claim.name}}</a>
+            <a ng-repeat="claim in menus.claims" href="#" ng-click="closeNav()">{{claim.name}}</a>
             </div>
             
             <h4>Benefits</h4>
             <div style="padding-left:10px; padding-bottom: 20px;">
-            <a ng-repeat="benefit in menus.benefits" href="#">{{benefit.name}}</a>
+            <a ng-repeat="benefit in menus.benefits" ui-sref="{{benefit.url}}" ng-click="closeNav()">{{benefit.name}}</a>
             </div>
         </div>
         <span class="col-md-1 hidden-xs" style="border-left:0.5px solid #fff;height:550px"></span>
         <div class="col-md-3">
           <h3>Find Care</h3><br>
           <div class="boldsubs">
-            <a ng-repeat="findcare in menus.findcares" href="#">{{findcare.name}}</a>
+            <a ng-repeat="findcare in menus.findcares" href="#" ng-click="closeNav()">{{findcare.name}}</a>
           </div>
         </div>
         <span class="col-md-1 hidden-xs" style="border-left:0.5px solid #fff;height:550px"></span>
         <div class="col-md-3">
           <h3>Support</h3><br>
           <div class="boldsubs">
-          <a ng-repeat="supmenu in menus.supmenus" href="#">{{supmenu.name}}</a>
+          <a ng-repeat="supmenu in menus.supmenus" href="#" ng-click="closeNav()">{{supmenu.name}}</a>
           </div>
         </div>
     </div>
