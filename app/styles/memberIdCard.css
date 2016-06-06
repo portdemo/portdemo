@@ -10,7 +10,6 @@
 
 .expandcollapse-heading-collapsed {
   cursor: pointer;
-  /*position: relative;*/
   z-index: 100000000;
   border: 1px solid #c8c8c8;
 
@@ -33,8 +32,6 @@
 .expandcollapse-heading-expanded {
   cursor: pointer;
   z-index: 100000000;
-/*  position: relative;*/
-
   border: 1px solid #c8c8c8;
 }
 
