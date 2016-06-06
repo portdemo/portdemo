@@ -7,14 +7,14 @@
           <h3>My Plan</h3><br>
            <h4>My Plan</h4>
             <div style="padding-left:10px;">
-            <a ng-repeat="myplan in menus.myplans" href="#" ng-click="closeNav()">{{myplan.name}}</a>
+            <a ng-repeat="myplan in menus.myplans" ui-sref="{{myplan.url}}" ng-click="closeNav()">{{myplan.name}}</a>
             </div>
-            
+
             <h4>Claims</h4>
             <div style="padding-left:10px;">
             <a ng-repeat="claim in menus.claims" href="#" ng-click="closeNav()">{{claim.name}}</a>
             </div>
-            
+
             <h4>Benefits</h4>
             <div style="padding-left:10px; padding-bottom: 20px;">
             <a ng-repeat="benefit in menus.benefits" ui-sref="{{benefit.url}}" ng-click="closeNav()">{{benefit.name}}</a>

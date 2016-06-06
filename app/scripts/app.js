@@ -60,6 +60,12 @@ angular
         templateUrl: 'views/benefits-plan-information.html',
         authRequired : 1,
       })
+      .state('memberIdCard', {
+        url: '/memberIdCard',
+        templateUrl: 'views/memberIdCard.html',
+        authRequired : 1,
+        controller: 'memberCardCtrl'
+      })
       .state('benefits.progress',{
         url: '/progress',
         templateUrl: 'views/benefits-plan-progress.html',
@@ -70,11 +76,11 @@ angular
         templateUrl: 'views/service-limits.html',
         authRequired : 1,
         controller: 'serviceLimitCtrl'
-      });    
+      });
 
     $urlRouterProvider.otherwise('/login');
 
-    
+
 
 $httpProvider.defaults.headers.common = {};
 $httpProvider.defaults.headers.post = {};

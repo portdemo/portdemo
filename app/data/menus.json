@@ -8,7 +8,8 @@
       "name": "Pharmacy"
     },
     {
-      "name": "ID Card"
+      "name": "ID Card",
+      "url" : "memberIdCard"
     },
     {
       "name": "Referrals and Authorizations"
